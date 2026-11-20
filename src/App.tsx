@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ReraComplianceSection } from './components/ReraComplianceSection';
+import { ProjectPhilosophy } from './components/ProjectPhilosophy';
 import { MasterPlanExplorer } from './components/MasterPlanExplorer';
 import { LivingCollections } from './components/LivingCollections';
-import { SpecificationsSection } from './components/SpecificationsSection';
 import { AmenitiesBento } from './components/AmenitiesBento';
+import { SpecificationsSection } from './components/SpecificationsSection';
 import { ConnectivitySection } from './components/ConnectivitySection';
+import { ReraComplianceSection } from './components/ReraComplianceSection';
 import { VipRegistration } from './components/VipRegistration';
 import { BrochureModal } from './components/BrochureModal';
 import { ReraCertificateModal } from './components/ReraCertificateModal';
@@ -32,47 +33,53 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-[#111827] flex flex-col font-sans selection:bg-[#9A721C]/20 selection:text-[#111827]">
-      {/* 1-Row 3-Zone Top Bar */}
+    <div className="min-h-screen bg-white text-[#18221D] flex flex-col font-sans selection:bg-[#15271F]/15 selection:text-[#15271F]">
+      {/* Minimal 3-Zone Editorial Top Bar */}
       <Navbar
         onOpenVipModal={scrollToVipRegistration}
         onOpenCertificate={() => setIsCertificateOpen(true)}
       />
 
       <main className="flex-1">
-        {/* Hero Section with Project Metrics, Countdown & U.P. RERA Dock */}
+        {/* Full-Bleed Architectural Hero + Key Facts Ribbon */}
         <Hero
           onOpenVipModal={scrollToVipRegistration}
           onOpenBrochureModal={() => setIsBrochureOpen(true)}
           onOpenCertificate={() => setIsCertificateOpen(true)}
         />
 
-        {/* Official U.P. RERA Form C Credentials */}
-        <ReraComplianceSection onOpenCertificate={() => setIsCertificateOpen(true)} />
+        {/* Editorial Philosophy & Low-Density Living Narrative */}
+        <ProjectPhilosophy
+          onOpenVipModal={scrollToVipRegistration}
+          onOpenCertificate={() => setIsCertificateOpen(true)}
+        />
 
-        {/* Master Plan Architecture & Official Area Statement */}
+        {/* Master Planning Perspectives & Land Allocation Statement */}
         <MasterPlanExplorer onOpenSpecsSheet={() => setIsSpecsOpen(true)} />
 
-        {/* Expandable Filterable Schedule of All 38 Plots */}
+        {/* Expandable Schedule of All 38 Exclusive Plots */}
         <LivingCollections onSelectOption={handleSelectPlot} />
 
-        {/* 12-Point Engineering & Development Specifications */}
-        <SpecificationsSection onOpenSpecsSheet={() => setIsSpecsOpen(true)} />
-
-        {/* Planned Civic Amenities, Parks & Infrastructure Bento */}
+        {/* Open Greens, Avenues & Underground Civic Infrastructure */}
         <AmenitiesBento />
 
-        {/* Strategic Connectivity Matrix along Sultanpur Road */}
+        {/* 12-Point Project Specifications Editorial Ledger */}
+        <SpecificationsSection onOpenSpecsSheet={() => setIsSpecsOpen(true)} />
+
+        {/* Sultanpur Road Location Advantage & Drive-Time Ledger */}
         <ConnectivitySection />
 
-        {/* Priority Plot Selection Registration & VIP Token */}
+        {/* Deep Botanical Statutory Transparency Band (U.P. RERA Form C) */}
+        <ReraComplianceSection onOpenCertificate={() => setIsCertificateOpen(true)} />
+
+        {/* Private Site Visit & Plot Enquiry Section */}
         <VipRegistration
           preselectedPlot={selectedPlot}
           onOpenBrochureModal={() => setIsBrochureOpen(true)}
         />
       </main>
 
-      {/* Footer with Full U.P. RERA Disclosures */}
+      {/* Quiet Architectural Footer */}
       <Footer
         onOpenVipModal={scrollToVipRegistration}
         onOpenSpecsSheet={() => setIsSpecsOpen(true)}

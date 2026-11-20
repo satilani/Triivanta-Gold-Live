@@ -2,30 +2,30 @@
 
 @layer base {
   :root {
-    --font-cinzel: 'Cinzel', serif;
-    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-    --font-playfair: 'Playfair Display', serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
   }
 
   body {
-    font-family: var(--font-jakarta);
-    background-color: #FAF9F6;
-    color: #111827;
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: #18221d;
   }
 
-  h1, h2, h3, .font-display {
-    font-family: var(--font-cinzel);
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
   }
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #B58827 0%, #8F6714 55%, #6F4E0C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gold-gradient-text-hero {
-  background: linear-gradient(135deg, #FFF7D6 0%, #E6C875 40%, #D4AF37 78%, #B08628 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.editorial-rule {
+  height: 1px;
+  background-color: #e2dfd7;
 }

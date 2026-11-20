@@ -1,156 +1,120 @@
 import React from 'react';
-import { ShieldCheck, Zap, Droplets } from 'lucide-react';
 import { AREA_STATEMENT } from '../data/rera';
+import clubhouseExteriorImg from '../assets/images/triivanta_clubhouse_exterior_1793423808189.jpg';
+import grandBoulevardImg from '../assets/images/triivanta_grand_boulevard_1793423808958.jpg';
 
 export const AmenitiesBento: React.FC = () => {
+  const utilityPillars = [
+    {
+      index: '01',
+      kicker: '15 KL U.G.T. · 25 KLD STP',
+      title: 'Water Supply & Conservation',
+      body: 'Dedicated 15 KL Underground Tank with 100 mm water supply lines, 250 mm & 450 mm RCC Hume Pipe sewerage into a 25 KLD STP, 150 mm DWC storm drains, and 3.00m diameter rainwater harvesting recharge pits.',
+    },
+    {
+      index: '02',
+      kicker: 'HT / LT Grid · 2 × 400 KVA',
+      title: 'Electrical Grid & LED Streetlights',
+      body: 'Engineered HT/LT electrical distribution powered by dual 400 KVA transformers, feeder pillars, individual plot service connections, and energy-efficient LED streetlights along every avenue.',
+    },
+    {
+      index: '03',
+      kicker: `${AREA_STATEMENT.boundaryWallLengthM} RMT · ${AREA_STATEMENT.boundaryWallHeightM}m Height`,
+      title: 'Secured Gated Perimeter',
+      body: 'A continuous 746.13 running-meter boundary wall rising 2.1 meters high encircles all 38 demarcated plots, anchored by a controlled main entrance gate directly off Sultanpur Road.',
+    },
+  ];
+
   return (
-    <section id="amenities" className="py-20 bg-[#FAF9F6] border-b border-[#E5E0D5]">
+    <section id="amenities" className="py-24 bg-[#F5F4EF] border-b border-[#E6E3DB]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#8F6714] block mb-2">
-            Civic Infrastructure & Open Spaces
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#111827] tracking-tight text-balance">
-            Planned Open Greens & Modern Utilities
+        <div className="max-w-2xl mb-14">
+          <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
+            Open Greens & Civic Infrastructure
+          </p>
+          <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
+            Tranquil Landscapes, Engineered Beneath.
           </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-            Every civic utility and open-space zone at TRIIVANTA GOLD is engineered to municipal
-            norms—pairing wide 18m and 9m avenues with 2,807.59 Sq.Mt. of parks and sustainable
-            water conservation.
+          <p className="mt-4 text-[#535E58] text-sm sm:text-base leading-relaxed">
+            Serene tree-lined avenues and dedicated neighbourhood parks meet complete municipal-grade
+            underground infrastructure designed for effortless day-one construction.
           </p>
         </div>
 
-        {/* Asymmetric Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Bento Item 1: Landscaped Parks & Civic Amenities (Spans 2 cols) */}
-          <div className="lg:col-span-2 rounded-xl overflow-hidden border border-[#DFD8C8] bg-[#121826] group relative flex flex-col justify-end min-h-[360px] sm:min-h-[420px]">
+        {/* Asymmetric Visual Showcase Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+          {/* Primary Landscape Feature (7 cols) */}
+          <div className="lg:col-span-7 relative rounded-sm overflow-hidden bg-[#15271F] min-h-[360px] sm:min-h-[430px] flex flex-col justify-end group">
             <img
-              src="/src/assets/images/triivanta_clubhouse_exterior_1793423808189.jpg"
-              alt="Civic amenities and landscaped park concept for TRIIVANTA GOLD"
-              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              src={clubhouseExteriorImg}
+              alt="Landscaped central park and amenities zone concept for TRIIVANTA GOLD"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-
-            <div className="relative z-10 p-6 sm:p-8">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-[#F3E5AB] font-semibold tracking-wider uppercase mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
+            <div className="relative z-10 p-7 sm:p-9">
+              <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#E5C987] font-semibold mb-2">
                 <span>2 Landscaped Parks</span>
                 <span aria-hidden="true">·</span>
                 <span>{AREA_STATEMENT.greenAreaSqm.toLocaleString()} Sq.Mt. (15%)</span>
                 <span aria-hidden="true">·</span>
                 <span>{AREA_STATEMENT.amenitiesAreaSqm} Sq.Mt. Amenities Zone</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-2">
-                Central Park, Pocket Greens & Amenities Precinct
+              <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
+                Central Park, Pocket Greens & Community Precinct
               </h3>
-              <p className="text-slate-200 text-xs sm:text-sm max-w-xl leading-relaxed">
-                Anchor central park ({AREA_STATEMENT.parkOneSqm.toLocaleString()} Sq.Mt.) and
-                secondary green pocket ({AREA_STATEMENT.parkTwoSqm} Sq.Mt.) with paved walkways,
-                seating lawns, evergreen trees (1–4m height), and a dedicated{' '}
-                {AREA_STATEMENT.amenitiesAreaSqm} Sq.Mt. commercial/amenities parcel (CP).
+              <p className="mt-2 text-white/80 text-sm max-w-xl leading-relaxed">
+                A {AREA_STATEMENT.parkOneSqm.toLocaleString()} Sq.Mt. central park and{' '}
+                {AREA_STATEMENT.parkTwoSqm} Sq.Mt. secondary green with paved walkways, seating
+                alcoves, 1–4m evergreen trees, and a dedicated {AREA_STATEMENT.amenitiesAreaSqm}{' '}
+                Sq.Mt. amenities parcel.
               </p>
             </div>
           </div>
 
-          {/* Bento Item 2: 18m Main & 9m Internal Roads */}
-          <div className="rounded-xl overflow-hidden border border-[#DFD8C8] bg-[#121826] group relative flex flex-col justify-end min-h-[360px] sm:min-h-[420px]">
+          {/* Secondary Avenue Feature (5 cols) */}
+          <div className="lg:col-span-5 relative rounded-sm overflow-hidden bg-[#15271F] min-h-[360px] sm:min-h-[430px] flex flex-col justify-end group">
             <img
-              src="/src/assets/images/triivanta_grand_boulevard_1793423808958.jpg"
-              alt="18-meter main avenue and 9-meter internal paved roads with avenue trees"
-              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              src={grandBoulevardImg}
+              alt="18-meter main avenue and 9-meter internal roads with paver footpaths"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-
-            <div className="relative z-10 p-6 sm:p-8">
-              <div className="flex items-center gap-2 text-xs text-[#F3E5AB] font-semibold tracking-wider uppercase mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
+            <div className="relative z-10 p-7 sm:p-9">
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#E5C987] font-semibold mb-2">
                 <span>{AREA_STATEMENT.roadAreaSqm.toLocaleString()} Sq.Mt.</span>
                 <span aria-hidden="true">·</span>
                 <span>32.75% Layout Share</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-2">
-                18m Main & 9m Internal Roads
+              <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
+                18m Main & 9m Internal Avenues
               </h3>
-              <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
-                Directly approached off Sultanpur Road with levelled carriageways, interlocking
-                paver footpaths, kerb stones, and storm drains.
+              <p className="mt-2 text-white/80 text-sm leading-relaxed">
+                Direct entry off Sultanpur Road with levelled carriageways, interlocking paver
+                pedestrian footpaths, kerb stones, and storm drains.
               </p>
             </div>
           </div>
+        </div>
 
-          {/* Bento Item 3: Water Supply, STP & Rainwater Harvesting */}
-          <div className="rounded-xl border border-[#E5E0D5] bg-white p-6 sm:p-8 flex flex-col justify-between hover:border-[#B58827]/60 transition-colors">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 mb-5">
-                <Droplets className="w-5 h-5" />
+        {/* Clean 3-Column Editorial Infrastructure Strip (No Boxy Icon Cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#DCD8CE]">
+          {utilityPillars.map((item) => (
+            <div key={item.index} className="space-y-3">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-mono font-semibold text-[#9A7428] tabular-nums">
+                  {item.index}
+                </span>
+                <span className="font-mono text-[11px] text-[#535E58] tabular-nums">
+                  {item.kicker}
+                </span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-500 font-medium mb-1">
-                <span>15 KL U.G.T.</span>
-                <span aria-hidden="true">·</span>
-                <span>25 KLD STP</span>
-              </div>
-              <h3 className="text-xl font-display font-bold text-[#111827] mb-3">
-                Water Supply & Conservation
-              </h3>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                15 KL Underground Tank with 100 mm supply lines, 250 mm & 450 mm RCC Hume Pipe
-                sewerage into a 25 KLD STP, and 3.00m diameter rainwater harvesting recharge wells.
-              </p>
+              <h3 className="font-display text-2xl font-semibold text-[#15271F]">{item.title}</h3>
+              <p className="text-sm text-[#535E58] leading-relaxed">{item.body}</p>
             </div>
-            <div className="mt-6 pt-4 border-t border-[#ECE8DF] text-xs text-[#8F6714] font-semibold">
-              150 mm DWC storm drainage included
-            </div>
-          </div>
-
-          {/* Bento Item 4: Electrical Infrastructure */}
-          <div className="rounded-xl border border-[#E5E0D5] bg-white p-6 sm:p-8 flex flex-col justify-between hover:border-[#B58827]/60 transition-colors">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-[#8F6714] mb-5">
-                <Zap className="w-5 h-5" />
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-500 font-medium mb-1">
-                <span>HT / LT Grid</span>
-                <span aria-hidden="true">·</span>
-                <span>2 × 400 KVA</span>
-              </div>
-              <h3 className="text-xl font-display font-bold text-[#111827] mb-3">
-                Power Grid & LED Streetlights
-              </h3>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                Dedicated electrical distribution featuring dual 400 KVA transformers, feeder pillars,
-                individual plot service provisions, and energy-efficient LED streetlights across
-                every road.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-[#ECE8DF] text-xs text-[#8F6714] font-semibold">
-              Compliant with UPERC multi-point norms
-            </div>
-          </div>
-
-          {/* Bento Item 5: Gated Boundary Wall & Security */}
-          <div className="rounded-xl border border-[#E5E0D5] bg-white p-6 sm:p-8 flex flex-col justify-between hover:border-[#B58827]/60 transition-colors">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-5">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-500 font-medium mb-1">
-                <span>{AREA_STATEMENT.boundaryWallLengthM} RMT</span>
-                <span aria-hidden="true">·</span>
-                <span>{AREA_STATEMENT.boundaryWallHeightM}m Wall Height</span>
-              </div>
-              <h3 className="text-xl font-display font-bold text-[#111827] mb-3">
-                Secured Gated Perimeter
-              </h3>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                Complete 746.13 Running Meters compound boundary wall standing 2.1 meters high
-                around all 38 demarcated plots, anchored by a manned primary entry gate.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-[#ECE8DF] text-xs text-[#8F6714] font-semibold">
-              Low-density 38-family gated community
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

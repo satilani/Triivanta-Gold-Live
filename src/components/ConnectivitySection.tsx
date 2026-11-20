@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Compass, Car, MapPin } from 'lucide-react';
+import { Compass, MapPin } from 'lucide-react';
 import { RERA_DETAILS } from '../data/rera';
 
 interface Landmark {
@@ -20,50 +20,50 @@ export const ConnectivitySection: React.FC = () => {
       category: 'transit',
       name: 'Sultanpur Road Highway Corridor',
       distance: 'Direct Front',
-      time: '0 Minutes',
+      time: '0 Min',
       detail: 'Direct 18m layout entry off Sultanpur Road with dedicated road widening frontage',
     },
     {
       category: 'transit',
       name: 'Gosainganj / Gulamipur Road Junction',
       distance: '3.2 km',
-      time: '5 Minutes',
-      detail: 'Immediate town-center and daily commercial access along Sultanpur Road',
+      time: '5 Min',
+      detail: 'Immediate town-center and daily commercial conveniences along Sultanpur Road',
     },
     {
       category: 'transit',
       name: 'Purvanchal Expressway Access',
       distance: '~3.8 km',
-      time: '6 Minutes',
+      time: '6 Min',
       detail: 'Swift entry to Uttar Pradesh’s premier 6-lane expressway corridor',
     },
     {
       category: 'transit',
       name: 'Amar Shaheed Path / Ahimamau',
       distance: '12.3 km',
-      time: '15 Minutes',
-      detail: 'Fast signal-free access connecting to Lucknow airport and Gomti Nagar',
+      time: '15 Min',
+      detail: 'Signal-free arterial link to Lucknow Airport, Gomti Nagar & Sushant Golf City',
     },
     {
       category: 'business',
       name: 'HCL IT City & Chak Ganjaria (CG City)',
       distance: '~12.5 km',
-      time: '16 Minutes',
+      time: '16 Min',
       detail: 'Major IT campuses, institutional district, and administrative headquarters',
-    },
-    {
-      category: 'business',
-      name: 'Ekana International Stadium & Phoenix Palassio',
-      distance: '~14.5 km',
-      time: '18 Minutes',
-      detail: 'Premier retail, sports, hospitality, and Gomti Nagar Extension hub',
     },
     {
       category: 'education',
       name: 'IIIT Lucknow & Institutional Corridor',
       distance: '~12.5 km',
-      time: '16 Minutes',
+      time: '16 Min',
       detail: 'National technical institute and leading K-12 schools along Sultanpur Road',
+    },
+    {
+      category: 'business',
+      name: 'Ekana Stadium & Phoenix Palassio',
+      distance: '~14.5 km',
+      time: '18 Min',
+      detail: 'Premier retail, sports, hospitality, and Gomti Nagar Extension hub',
     },
     {
       category: 'healthcare',
@@ -78,92 +78,111 @@ export const ConnectivitySection: React.FC = () => {
     activeTab === 'all' ? landmarks : landmarks.filter((item) => item.category === activeTab);
 
   return (
-    <section id="connectivity" className="py-20 bg-white border-b border-[#E5E0D5]">
+    <section id="connectivity" className="py-24 bg-[#F5F4EF] border-b border-[#E6E3DB]">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#8F6714] block mb-2">
-            Strategic Location · {RERA_DETAILS.shortLocation}
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#111827] tracking-tight text-balance">
-            Direct Approach on Sultanpur Road
-          </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-            Situated at {RERA_DETAILS.fullProjectAddress} — just 3.2 km from Gosainganj junction
-            and 12.3 km from Ahimamau / Amar Shaheed Path along Lucknow’s premier Sultanpur Road
-            corridor.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Location Narrative, Address & Filter Controls (5 cols) */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
+                Location Advantage · {RERA_DETAILS.shortLocation}
+              </p>
+              <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
+                Directly Positioned on Sultanpur Road.
+              </h2>
+              <p className="mt-5 text-sm sm:text-base text-[#535E58] leading-relaxed">
+                Quietly insulated inside a gated 38-plot enclave, yet effortlessly linked to
+                Lucknow’s fastest-growing institutional, IT, and healthcare corridor along
+                Sultanpur Road and Amar Shaheed Path.
+              </p>
+            </div>
 
-          {/* Functional Filter Tabs */}
-          <div className="mt-8 inline-flex flex-wrap justify-center gap-1.5 p-1.5 rounded-lg bg-[#EFECE4] border border-[#E2DDD0]">
-            {[
-              { id: 'all', label: 'All Landmarks' },
-              { id: 'transit', label: 'Transit & Highway' },
-              { id: 'business', label: 'IT & Commercial' },
-              { id: 'education', label: 'Education' },
-              { id: 'healthcare', label: 'Healthcare' },
-            ].map((tab) => (
-              <button
-                type="button"
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-md transition-colors whitespace-nowrap cursor-pointer ${
-                  activeTab === tab.id
-                    ? 'bg-[#121826] text-white shadow-sm'
-                    : 'text-slate-600 hover:text-[#111827]'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Connectivity Matrix Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {filtered.map((item, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-lg bg-[#FAF9F6] border border-[#E5E0D5] hover:border-[#B58827]/60 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
-                  <span className="capitalize font-medium">{item.category}</span>
-                  <span className="font-mono text-[#8F6714] font-semibold tabular-nums">
-                    {item.distance}
+            {/* Clean Site Address & Coordinates Block */}
+            <div className="p-6 bg-white border border-[#E2DFD7] rounded-sm space-y-4">
+              <div className="flex items-start gap-3">
+                <Compass className="w-4 h-4 text-[#9A7428] shrink-0 mt-1" />
+                <div>
+                  <span className="text-[11px] uppercase tracking-[0.14em] text-[#535E58] font-semibold block">
+                    Project Site Address
                   </span>
+                  <p className="mt-1 text-sm font-medium text-[#18221D] leading-relaxed">
+                    {RERA_DETAILS.fullProjectAddress}
+                  </p>
                 </div>
-                <h4 className="text-base font-semibold text-[#111827] font-display mb-1.5">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">{item.detail}</p>
               </div>
-
-              <div className="mt-5 pt-3 border-t border-[#E5E0D5] flex items-center justify-between text-xs">
-                <span className="text-slate-500 flex items-center gap-1.5">
-                  <Car className="w-3.5 h-3.5 text-slate-400" />
-                  Est. Drive
+              <div className="pt-3 border-t border-[#ECEAE2] flex items-center justify-between text-xs">
+                <span className="text-[#535E58] inline-flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#9A7428]" />
+                  <span>GPS Coordinates</span>
                 </span>
-                <span className="font-display font-bold text-[#111827] text-sm tabular-nums">
-                  {item.time}
+                <span className="font-mono font-semibold text-[#15271F] tabular-nums">
+                  {RERA_DETAILS.coordinates}
                 </span>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Verified GPS & Site Location Bar */}
-        <div className="mt-8 p-4 rounded-lg bg-[#FAF9F6] border border-[#DFD8C8] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-700">
-          <div className="flex items-start sm:items-center gap-3">
-            <Compass className="w-5 h-5 text-[#8F6714] shrink-0 mt-0.5 sm:mt-0" />
-            <span>
-              <strong className="text-[#111827]">Project Location:</strong>{' '}
-              {RERA_DETAILS.fullProjectAddress}
-            </span>
+            {/* Category Filter Controls */}
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.16em] text-[#535E58] font-semibold block mb-3">
+                Filter Nearby Landmarks
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  { id: 'all', label: 'All Landmarks' },
+                  { id: 'transit', label: 'Transit' },
+                  { id: 'business', label: 'IT & Retail' },
+                  { id: 'education', label: 'Education' },
+                  { id: 'healthcare', label: 'Healthcare' },
+                ].map((tab) => (
+                  <button
+                    type="button"
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id as any)}
+                    className={`px-3.5 py-2 text-xs font-semibold rounded-sm transition-colors whitespace-nowrap cursor-pointer ${
+                      activeTab === tab.id
+                        ? 'bg-[#15271F] text-white'
+                        : 'bg-white border border-[#E2DFD7] text-[#535E58] hover:text-[#15271F]'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-2 font-mono text-[#8F6714] font-semibold shrink-0 tabular-nums">
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
-            <span>{RERA_DETAILS.coordinates}</span>
+
+          {/* Right Column: Clean Chronological Drive-Time Ledger (7 cols) */}
+          <div className="lg:col-span-7 bg-white border border-[#E2DFD7] rounded-sm p-6 sm:p-8">
+            <div className="flex items-center justify-between pb-4 border-b border-[#E6E3DB] text-[11px] uppercase tracking-[0.16em] text-[#535E58] font-semibold">
+              <span>Landmark along Sultanpur Road Corridor</span>
+              <span>Distance · Est. Drive</span>
+            </div>
+
+            <div className="divide-y divide-[#ECEAE2]">
+              {filtered.map((item) => (
+                <div
+                  key={item.name}
+                  className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                >
+                  <div className="min-w-0">
+                    <h3 className="font-display text-xl font-semibold text-[#15271F]">
+                      {item.name}
+                    </h3>
+                    <p className="mt-1 text-xs sm:text-sm text-[#535E58] leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </div>
+                  <div className="sm:text-right shrink-0 flex sm:flex-col items-baseline sm:items-end gap-3 sm:gap-0.5">
+                    <span className="font-display text-2xl font-semibold text-[#15271F] tabular-nums">
+                      {item.time}
+                    </span>
+                    <span className="font-mono text-xs text-[#9A7428] font-medium tabular-nums">
+                      {item.distance}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
