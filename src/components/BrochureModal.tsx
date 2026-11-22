@@ -70,7 +70,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
               <p className="text-xs sm:text-sm leading-relaxed text-[#18221D]">
                 Developed by <strong className="text-[#15271F]">{RERA_DETAILS.promoterName}</strong>{' '}
                 on Sultanpur Road at {RERA_DETAILS.locality}, Tehsil {RERA_DETAILS.tehsil},{' '}
-                {RERA_DETAILS.districtState}. Comprising{' '}
+                {RERA_DETAILS.districtState}. Envisioned across 45 acres with Phase 1 launching{' '}
                 <strong className="text-[#15271F]">38 demarcated residential plots</strong> over
                 19,689 Sq.Mt. (4.87 Acres), registered under U.P. RERA{' '}
                 <span className="font-mono font-semibold text-[#9A7428]">
@@ -92,43 +92,43 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
           {/* Verified Project Benchmarks */}
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#535E58] font-semibold mb-3">
-              Verified Project Benchmarks
+              Phase 1 Benchmarks & Launch Pricing
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Total Project Area</span>
+                <span className="text-[#535E58] block text-[10px] uppercase">Phase 1 Land Area</span>
                 <span className="text-[#15271F] font-semibold font-mono text-sm tabular-nums mt-0.5 block">
                   {AREA_STATEMENT.totalLandSqm.toLocaleString()} Sq.Mt.
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Residential Plots</span>
+                <span className="text-[#535E58] block text-[10px] uppercase">Phase 1 Inventory</span>
                 <span className="text-[#15271F] font-semibold font-display text-base mt-0.5 block">
-                  38 Plots (47.25%)
+                  38 Plots (1,181–4,589 SF)
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Landscaped Parks</span>
-                <span className="text-[#2E5D43] font-semibold font-mono text-sm tabular-nums mt-0.5 block">
-                  2,807.59 Sq.Mt. (15%)
+                <span className="text-[#535E58] block text-[10px] uppercase">Launch Rates</span>
+                <span className="text-[#9A7428] font-semibold font-mono text-xs tabular-nums mt-0.5 block">
+                  ₹3,100 · ₹3,410 · ₹3,720/SF
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
                 <span className="text-[#535E58] block text-[10px] uppercase">Road Network</span>
-                <span className="text-[#9A7428] font-semibold font-display text-base mt-0.5 block">
-                  18m Main & 9m Internal
+                <span className="text-[#15271F] font-semibold font-display text-base mt-0.5 block">
+                  60 Ft. Main & 30 Ft. Internal
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Utilities & Power</span>
+                <span className="text-[#535E58] block text-[10px] uppercase">Central Park Zone</span>
+                <span className="text-[#2E5D43] font-semibold font-mono text-xs tabular-nums mt-0.5 block">
+                  30,000 Sq.Ft. (15% Greens)
+                </span>
+              </div>
+              <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
+                <span className="text-[#535E58] block text-[10px] uppercase">Investor Helpline</span>
                 <span className="text-[#15271F] font-semibold font-mono text-xs tabular-nums mt-0.5 block">
-                  15 KL UGT · 25 KLD STP · 2×400 KVA
-                </span>
-              </div>
-              <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Boundary Wall</span>
-                <span className="text-[#15271F] font-semibold font-mono text-sm tabular-nums mt-0.5 block">
-                  746.13m × 2.1m H
+                  {RERA_DETAILS.helplineDisplay}
                 </span>
               </div>
             </div>

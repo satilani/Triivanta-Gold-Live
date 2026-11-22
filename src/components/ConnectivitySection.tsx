@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Compass, MapPin } from 'lucide-react';
+import { Compass, MapPin, ArrowUpRight } from 'lucide-react';
 import { RERA_DETAILS } from '../data/rera';
 
 interface Landmark {
   category: 'transit' | 'business' | 'education' | 'healthcare';
   name: string;
-  distance: string;
   time: string;
   detail: string;
 }
@@ -18,59 +17,51 @@ export const ConnectivitySection: React.FC = () => {
   const landmarks: Landmark[] = [
     {
       category: 'transit',
-      name: 'Sultanpur Road Highway Corridor',
-      distance: 'Direct Front',
+      name: 'Sultanpur Road Growth Corridor',
       time: '0 Min',
-      detail: 'Direct 18m layout entry off Sultanpur Road with dedicated road widening frontage',
-    },
-    {
-      category: 'transit',
-      name: 'Gosainganj / Gulamipur Road Junction',
-      distance: '3.2 km',
-      time: '5 Min',
-      detail: 'Immediate town-center and daily commercial conveniences along Sultanpur Road',
-    },
-    {
-      category: 'transit',
-      name: 'Purvanchal Expressway Access',
-      distance: '~3.8 km',
-      time: '6 Min',
-      detail: 'Swift entry to Uttar Pradesh’s premier 6-lane expressway corridor',
-    },
-    {
-      category: 'transit',
-      name: 'Amar Shaheed Path / Ahimamau',
-      distance: '12.3 km',
-      time: '15 Min',
-      detail: 'Signal-free arterial link to Lucknow Airport, Gomti Nagar & Sushant Golf City',
-    },
-    {
-      category: 'business',
-      name: 'HCL IT City & Chak Ganjaria (CG City)',
-      distance: '~12.5 km',
-      time: '16 Min',
-      detail: 'Major IT campuses, institutional district, and administrative headquarters',
+      detail: 'Direct 60 Ft. (18m) boulevard approach with connectivity to the proposed 80m Vigyan Path loop',
     },
     {
       category: 'education',
-      name: 'IIIT Lucknow & Institutional Corridor',
-      distance: '~12.5 km',
-      time: '16 Min',
-      detail: 'National technical institute and leading K-12 schools along Sultanpur Road',
+      name: 'City Montessori School (CMS)',
+      time: '10 Mins',
+      detail: 'Leading K-12 campus situated along the Sultanpur Road educational belt',
     },
     {
       category: 'business',
-      name: 'Ekana Stadium & Phoenix Palassio',
-      distance: '~14.5 km',
-      time: '18 Min',
-      detail: 'Premier retail, sports, hospitality, and Gomti Nagar Extension hub',
+      name: 'Ekana International Stadium & Phoenix Palassio',
+      time: '15 Mins',
+      detail: 'Premier sports arena, luxury retail mall, hospitality, and Gomti Nagar Extension hub',
+    },
+    {
+      category: 'education',
+      name: 'IIIT Lucknow Campus',
+      time: '15 Mins',
+      detail: 'National technical institute and CG City / HCL IT City institutional corridor',
     },
     {
       category: 'healthcare',
-      name: 'Medanta & Kalyan Singh Cancer Institute',
-      distance: '12 – 15 km',
-      time: '16–20 Min',
-      detail: '24/7 super-speciality tertiary hospitals along Sultanpur Road & Shaheed Path',
+      name: 'Lulu Mall & Medanta Hospital Lucknow',
+      time: '18 Mins',
+      detail: 'Flagship shopping destination and 24/7 super-speciality tertiary healthcare on Shaheed Path',
+    },
+    {
+      category: 'healthcare',
+      name: 'Sanjay Gandhi Postgraduate Institute (SGPGI)',
+      time: '20 Mins',
+      detail: 'Premier multi-speciality medical institute accessible via Sultanpur Road & Shaheed Path',
+    },
+    {
+      category: 'transit',
+      name: 'Chaudhary Charan Singh International Airport',
+      time: '30 Mins',
+      detail: 'Signal-free express connectivity via Amar Shaheed Path to Lucknow International Airport',
+    },
+    {
+      category: 'transit',
+      name: 'Charbagh Railway Station',
+      time: '35 Mins',
+      detail: 'Direct arterial link to Lucknow’s central rail junction and metro network',
     },
   ];
 
@@ -91,9 +82,9 @@ export const ConnectivitySection: React.FC = () => {
                 Directly Positioned on Sultanpur Road.
               </h2>
               <p className="mt-5 text-sm sm:text-base text-[#535E58] leading-relaxed">
-                Quietly insulated inside a gated 38-plot enclave, yet effortlessly linked to
-                Lucknow’s fastest-growing institutional, IT, and healthcare corridor along
-                Sultanpur Road and Amar Shaheed Path.
+                Quietly insulated inside a gated enclave at Vill. - Nizampur, Gosainganj, yet
+                directly connected to the Sultanpur Road Growth Corridor and the proposed 80-meter
+                Vigyan Path loop—placing schools, IT campuses, hospitals, and retail within minutes.
               </p>
             </div>
 
@@ -110,14 +101,20 @@ export const ConnectivitySection: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <div className="pt-3 border-t border-[#ECEAE2] flex items-center justify-between text-xs">
-                <span className="text-[#535E58] inline-flex items-center gap-1.5">
+              <div className="pt-3 border-t border-[#ECEAE2] flex flex-wrap items-center justify-between gap-3 text-xs">
+                <span className="text-[#535E58] inline-flex items-center gap-1.5 font-mono tabular-nums">
                   <MapPin className="w-3.5 h-3.5 text-[#9A7428]" />
-                  <span>GPS Coordinates</span>
+                  <span>{RERA_DETAILS.coordinates}</span>
                 </span>
-                <span className="font-mono font-semibold text-[#15271F] tabular-nums">
-                  {RERA_DETAILS.coordinates}
-                </span>
+                <a
+                  href={RERA_DETAILS.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#15271F] hover:text-[#9A7428] inline-flex items-center gap-1 underline underline-offset-4"
+                >
+                  <span>Get Directions</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#9A7428]" />
+                </a>
               </div>
             </div>
 
@@ -155,7 +152,7 @@ export const ConnectivitySection: React.FC = () => {
           <div className="lg:col-span-7 bg-white border border-[#E2DFD7] rounded-sm p-6 sm:p-8">
             <div className="flex items-center justify-between pb-4 border-b border-[#E6E3DB] text-[11px] uppercase tracking-[0.16em] text-[#535E58] font-semibold">
               <span>Landmark along Sultanpur Road Corridor</span>
-              <span>Distance · Est. Drive</span>
+              <span>Est. Travel Time</span>
             </div>
 
             <div className="divide-y divide-[#ECEAE2]">
@@ -172,12 +169,9 @@ export const ConnectivitySection: React.FC = () => {
                       {item.detail}
                     </p>
                   </div>
-                  <div className="sm:text-right shrink-0 flex sm:flex-col items-baseline sm:items-end gap-3 sm:gap-0.5">
-                    <span className="font-display text-2xl font-semibold text-[#15271F] tabular-nums">
+                  <div className="sm:text-right shrink-0">
+                    <span className="font-display text-2xl font-semibold text-[#15271F] tabular-nums whitespace-nowrap">
                       {item.time}
-                    </span>
-                    <span className="font-mono text-xs text-[#9A7428] font-medium tabular-nums">
-                      {item.distance}
                     </span>
                   </div>
                 </div>

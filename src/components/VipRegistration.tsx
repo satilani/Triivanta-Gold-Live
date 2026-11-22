@@ -57,10 +57,10 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
     setTimeout(() => {
       const generatedId = `TG-VIP-${Math.floor(1000 + Math.random() * 9000)}`;
       const configLabels: Record<VipRegistrationData['preferredConfiguration'], string> = {
-        'villa-plots': 'Compact Plot (137 – 184 Sq.Mt.)',
-        'bespoke-villas': 'Standard Plot (196 – 242 Sq.Mt.)',
-        'sky-residences': 'Grand Plot (297 – 299 Sq.Mt.)',
-        commercial: 'Signature Estate Plot (358 – 420 Sq.Mt.)',
+        'villa-plots': 'Classic & Executive (1,181 – 1,980 Sq.Ft.)',
+        'bespoke-villas': 'Premium & Grand (2,012 – 2,600 Sq.Ft.)',
+        'sky-residences': 'Elite Boulevard (3,200 – 3,264 Sq.Ft.)',
+        commercial: 'Signature Estate (3,861 – 4,589 Sq.Ft.)',
       };
 
       const newPass: VipPassDetails = {
@@ -111,23 +111,23 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
                 {[
                   {
                     index: '01',
-                    title: 'Choice Across All 38 Plots',
-                    desc: 'Review dimensions for Plots 01–36, A-1 & A-2 from 137.40 to 420.02 Sq.Mt.',
+                    title: 'Choice Across All 38 Phase 1 Plots',
+                    desc: 'Classic, Executive, Premium, Grand, Elite & Signature plots from 1,181 to 4,589 Sq.Ft.',
                   },
                   {
                     index: '02',
-                    title: '18m Avenue & Central Park Frontage',
-                    desc: 'Prioritize plots bordering the 18m entrance spine or 2,716.19 Sq.Mt. central park.',
+                    title: '60 Ft. Boulevard & Central Park Frontage',
+                    desc: 'Prioritize East, West, or North-facing plots along the 60 Ft. avenue or 30,000 Sq.Ft. park.',
                   },
                   {
                     index: '03',
-                    title: 'Complete Statutory Transparency',
-                    desc: 'Inspect U.P. RERA Registration Certificate (Form C) and complete project specifications before booking.',
+                    title: 'Official Current-Year Launch Pricing',
+                    desc: 'Transparent rates from ₹3,100 / Sq.Ft. backed by U.P. RERA Form C registration.',
                   },
                   {
                     index: '04',
                     title: 'Guided On-Site Walkthrough',
-                    desc: 'Private visit along Sultanpur Road at Nizampur, Gosainganj, Lucknow.',
+                    desc: 'Private visit along Sultanpur Road at Vill. - Nizampur, Gosainganj, Lucknow.',
                   },
                 ].map((item) => (
                   <div key={item.index} className="py-4 flex items-start gap-4">
@@ -147,14 +147,33 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
               </div>
             </div>
 
-            {/* Promoter Trust Note */}
-            <div className="p-4 bg-[#F5F4EF] border border-[#E2DFD7] rounded-sm text-xs text-[#535E58] flex items-start gap-3">
-              <Shield className="w-4 h-4 text-[#15271F] shrink-0 mt-0.5" />
-              <span>
-                All enquiries are managed directly by{' '}
-                <strong className="text-[#15271F]">{RERA_DETAILS.promoterName}</strong>,{' '}
-                {RERA_DETAILS.promoterOffice}.
-              </span>
+            {/* Direct Investor Desk & Promoter Trust Note */}
+            <div className="p-5 bg-[#F5F4EF] border border-[#E2DFD7] rounded-sm text-xs text-[#535E58] space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E2DFD7]">
+                <span className="uppercase tracking-[0.14em] font-semibold text-[#9A7428] text-[11px]">
+                  Direct Investor Desk
+                </span>
+                <a
+                  href={RERA_DETAILS.helplineHref}
+                  className="font-mono text-sm font-semibold text-[#15271F] hover:text-[#9A7428] tabular-nums"
+                >
+                  {RERA_DETAILS.helplineDisplay}
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <Shield className="w-4 h-4 text-[#15271F] shrink-0 mt-0.5" />
+                <span>
+                  Managed directly by{' '}
+                  <strong className="text-[#15271F]">{RERA_DETAILS.promoterName}</strong>,{' '}
+                  {RERA_DETAILS.promoterOffice} ·{' '}
+                  <a
+                    href={`mailto:${RERA_DETAILS.email}`}
+                    className="font-mono text-[#15271F] hover:text-[#9A7428]"
+                  >
+                    {RERA_DETAILS.email}
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -351,10 +370,18 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
                         }
                         className="w-full px-3.5 py-3 rounded-sm bg-white border border-[#D8D4CA] text-[#18221D] text-sm focus:border-[#15271F] focus:outline-none transition-colors"
                       >
-                        <option value="villa-plots">Compact (137.40 – 183.85 Sq.Mt.)</option>
-                        <option value="bespoke-villas">Standard (196.11 – 241.48 Sq.Mt.)</option>
-                        <option value="sky-residences">Grand (297.19 – 298.38 Sq.Mt.)</option>
-                        <option value="commercial">Signature Estate (358.71 – 420.02 Sq.Mt.)</option>
+                        <option value="villa-plots">
+                          Classic & Executive (1,181 – 1,980 Sq.Ft. · From ₹3,100/SF)
+                        </option>
+                        <option value="bespoke-villas">
+                          Premium & Grand (2,012 – 2,600 Sq.Ft. · ₹3,100–₹3,410/SF)
+                        </option>
+                        <option value="sky-residences">
+                          Elite Boulevard (3,200 – 3,264 Sq.Ft. · ₹3,100–₹3,410/SF)
+                        </option>
+                        <option value="commercial">
+                          Signature Estate (3,861 – 4,589 Sq.Ft. · ₹3,410–₹3,720/SF)
+                        </option>
                       </select>
                     </div>
                   </div>

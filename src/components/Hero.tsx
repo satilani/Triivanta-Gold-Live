@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, FileText, ShieldCheck } from 'lucide-react';
-import { RERA_DETAILS, AREA_STATEMENT } from '../data/rera';
+import { RERA_DETAILS, AREA_STATEMENT, TOWNSHIP_VISION } from '../data/rera';
 import heroAerialImg from '../assets/images/triivanta_hero_aerial_1793423807000.jpg';
 
 interface HeroProps {
@@ -18,20 +18,20 @@ export const Hero: React.FC<HeroProps> = ({
 
   const highlights = [
     {
-      value: `${AREA_STATEMENT.totalAcres} Acres`,
-      sub: `${AREA_STATEMENT.totalLandSqm.toLocaleString()} Sq.Mt. Total Land`,
+      value: `${TOWNSHIP_VISION.grandVisionAcres} Acres`,
+      sub: `Township Vision · Phase 1 (${AREA_STATEMENT.totalAcres} Acres)`,
     },
     {
       value: `${AREA_STATEMENT.totalPlots} Plots`,
-      sub: 'Low-Density Gated Enclave',
+      sub: 'Phase 1 · 1,181 – 4,589 Sq.Ft.',
     },
     {
-      value: '137 – 420 Sq.Mt.',
-      sub: 'Approx. 1,479 – 4,521 Sq.Ft.',
+      value: `₹${TOWNSHIP_VISION.startingRatePerSqft.toLocaleString('en-IN')} / Sq.Ft.`,
+      sub: 'Official Launch Baseline (Current Year)',
     },
     {
-      value: '52.75% Open',
-      sub: '18m & 9m Roads · 2 Parks',
+      value: `${TOWNSHIP_VISION.centralParkSqftLabel}`,
+      sub: 'Central Park · 60 Ft. Main Boulevard',
     },
   ];
 
@@ -49,9 +49,8 @@ export const Hero: React.FC<HeroProps> = ({
               (e.target as HTMLElement).style.display = 'none';
             }}
           />
-          {/* Calm architectural contrast scrim */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/92 via-[#0D1A14]/45 to-[#0D1A14]/25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1A14]/75 via-[#0D1A14]/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1A14]/78 via-[#0D1A14]/28 to-transparent" />
         </div>
 
         {/* Lower-Left Editorial Composition + Quiet RERA Reference */}
@@ -60,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="lg:col-span-8">
               {/* Unboxed Metadata Line */}
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-[0.14em] uppercase text-[#E5C987] font-medium mb-5">
-                <span>Residential Plotted Enclave</span>
+                <span>45-Acre Township Vision · Phase 1 Launch</span>
                 <span aria-hidden="true" className="text-white/35">
                   ·
                 </span>
@@ -69,16 +68,15 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* Serene Editorial Display Headline */}
               <h1 className="font-display font-medium text-4xl sm:text-6xl lg:text-[64px] text-white leading-[1.06] tracking-tight text-balance max-w-3xl">
-                Quiet Living, Rooted in <span className="italic text-[#E5C987]">Freehold</span>{' '}
-                Freedom.
+                Where <span className="italic text-[#E5C987]">Luxury</span> Meets Land.
               </h1>
 
               <p className="mt-5 text-white/85 text-base sm:text-lg max-w-2xl leading-relaxed font-light">
-                TRIIVANTA GOLD is a U.P. RERA registered gated community of just{' '}
-                <span className="text-white font-medium">38 residential plots</span> on Sultanpur
-                Road, Lucknow — crafted by{' '}
-                <span className="text-white font-medium">{RERA_DETAILS.promoterName}</span> with
-                wide 18m & 9m avenues, 2 landscaped parks, and full underground infrastructure.
+                TRIIVANTA GOLD by{' '}
+                <span className="text-white font-medium">{RERA_DETAILS.promoterName}</span> opens
+                Phase 1 with <span className="text-white font-medium">38 exclusive freehold plots</span>{' '}
+                on Sultanpur Road, Lucknow — anchored by a 60 Ft. (18m) main boulevard, 30,000
+                Sq.Ft. central green park, and complete underground civic infrastructure.
               </p>
 
               {/* Refined Primary & Secondary Actions */}
@@ -88,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({
                   onClick={onOpenVipModal}
                   className="px-7 py-3.5 text-xs uppercase tracking-[0.16em] font-semibold text-[#15271F] bg-white hover:bg-[#F5F4EF] active:scale-[0.98] rounded-sm transition-all duration-200 inline-flex items-center gap-2.5 whitespace-nowrap cursor-pointer"
                 >
-                  <span>Schedule Site Visit</span>
+                  <span>Book Site Visit</span>
                   <ArrowRight className="w-4 h-4 text-[#9A7428]" />
                 </button>
 
@@ -153,10 +151,7 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="w-full bg-white border-b border-[#E6E3DB]">
         <div className="max-w-7xl mx-auto px-6 py-7 grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-8 divide-y-0 lg:divide-x lg:divide-[#E6E3DB]">
           {highlights.map((item, idx) => (
-            <div
-              key={item.value}
-              className={`flex flex-col ${idx > 0 ? 'lg:pl-8' : ''}`}
-            >
+            <div key={item.value} className={`flex flex-col ${idx > 0 ? 'lg:pl-8' : ''}`}>
               <span className="font-display text-2xl sm:text-3xl font-semibold text-[#15271F] tabular-nums leading-tight">
                 {item.value}
               </span>

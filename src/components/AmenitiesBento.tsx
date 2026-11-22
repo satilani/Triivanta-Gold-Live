@@ -1,5 +1,5 @@
 import React from 'react';
-import { AREA_STATEMENT } from '../data/rera';
+import { AREA_STATEMENT, TOWNSHIP_VISION } from '../data/rera';
 import clubhouseExteriorImg from '../assets/images/triivanta_clubhouse_exterior_1793423808189.jpg';
 import grandBoulevardImg from '../assets/images/triivanta_grand_boulevard_1793423808958.jpg';
 
@@ -8,20 +8,20 @@ export const AmenitiesBento: React.FC = () => {
     {
       index: '01',
       kicker: '15 KL U.G.T. · 25 KLD STP',
-      title: 'Water Supply & Conservation',
-      body: 'Dedicated 15 KL Underground Tank with 100 mm water supply lines, 250 mm & 450 mm RCC Hume Pipe sewerage into a 25 KLD STP, 150 mm DWC storm drains, and 3.00m diameter rainwater harvesting recharge pits.',
+      title: 'Underground Water & Conservation',
+      body: '15 KL Underground Tank with 100 mm water mains, 250 mm & 450 mm RCC Hume Pipe sewerage into a 25 KLD STP, 150 mm DWC underground storm drains, and 3.00m diameter rainwater harvesting recharge pits.',
     },
     {
       index: '02',
-      kicker: 'HT / LT Grid · 2 × 400 KVA',
-      title: 'Electrical Grid & LED Streetlights',
-      body: 'Engineered HT/LT electrical distribution powered by dual 400 KVA transformers, feeder pillars, individual plot service connections, and energy-efficient LED streetlights along every avenue.',
+      kicker: '2 × 400 KVA · LED Streetlights',
+      title: 'Clean Power Grid & Lighting',
+      body: 'Engineered HT/LT electrical distribution with dual 400 KVA transformers, feeder pillars, underground cabling provisions for clean streetscapes, and energy-efficient LED avenue lighting.',
     },
     {
       index: '03',
-      kicker: `${AREA_STATEMENT.boundaryWallLengthM} RMT · ${AREA_STATEMENT.boundaryWallHeightM}m Height`,
-      title: 'Secured Gated Perimeter',
-      body: 'A continuous 746.13 running-meter boundary wall rising 2.1 meters high encircles all 38 demarcated plots, anchored by a controlled main entrance gate directly off Sultanpur Road.',
+      kicker: `${AREA_STATEMENT.boundaryWallLengthM} RMT Wall · 24/7 CCTV`,
+      title: 'Gated Security & Convenience Zone',
+      body: 'A 2.1m-high perimeter boundary wall spanning 746.13 running meters, grand gated entrance with 24/7 CCTV surveillance, and a dedicated 934.86 Sq.Mt. daily-convenience shopping parcel.',
     },
   ];
 
@@ -31,14 +31,15 @@ export const AmenitiesBento: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-2xl mb-14">
           <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
-            Open Greens & Civic Infrastructure
+            Botanical Greens & Civic Infrastructure
           </p>
           <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
-            Tranquil Landscapes, Engineered Beneath.
+            Designed for Living, Planned for Lasting Value.
           </h2>
           <p className="mt-4 text-[#535E58] text-sm sm:text-base leading-relaxed">
-            Serene tree-lined avenues and dedicated neighbourhood parks meet complete municipal-grade
-            underground infrastructure designed for effortless day-one construction.
+            Over 50% open area pairing a {TOWNSHIP_VISION.centralParkSqftLabel} central park and{' '}
+            {TOWNSHIP_VISION.mainBoulevardLabel} avenues with complete underground civic
+            infrastructure.
           </p>
         </div>
 
@@ -48,27 +49,26 @@ export const AmenitiesBento: React.FC = () => {
           <div className="lg:col-span-7 relative rounded-sm overflow-hidden bg-[#15271F] min-h-[360px] sm:min-h-[430px] flex flex-col justify-end group">
             <img
               src={clubhouseExteriorImg}
-              alt="Landscaped central park and amenities zone concept for TRIIVANTA GOLD"
+              alt="30,000 Sq.Ft. central green park and jogging walkways at TRIIVANTA GOLD"
               className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
             <div className="relative z-10 p-7 sm:p-9">
               <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#E5C987] font-semibold mb-2">
-                <span>2 Landscaped Parks</span>
+                <span>{TOWNSHIP_VISION.centralParkSqftLabel} Park Zone</span>
                 <span aria-hidden="true">·</span>
                 <span>{AREA_STATEMENT.greenAreaSqm.toLocaleString()} Sq.Mt. (15%)</span>
                 <span aria-hidden="true">·</span>
-                <span>{AREA_STATEMENT.amenitiesAreaSqm} Sq.Mt. Amenities Zone</span>
+                <span>Phase 1 Botanical Oasis</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
-                Central Park, Pocket Greens & Community Precinct
+                Central Green Park, Jogger’s Track & Play Meadows
               </h3>
               <p className="mt-2 text-white/80 text-sm max-w-xl leading-relaxed">
-                A {AREA_STATEMENT.parkOneSqm.toLocaleString()} Sq.Mt. central park and{' '}
-                {AREA_STATEMENT.parkTwoSqm} Sq.Mt. secondary green with paved walkways, seating
-                alcoves, 1–4m evergreen trees, and a dedicated {AREA_STATEMENT.amenitiesAreaSqm}{' '}
-                Sq.Mt. amenities parcel.
+                Dedicated to Phase 1 residents with manicured walking paths, jogger’s park, flower
+                avenues, wellness sit-outs, children’s play meadows, and a{' '}
+                {AREA_STATEMENT.amenitiesAreaSqm} Sq.Mt. daily-convenience shopping precinct.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ export const AmenitiesBento: React.FC = () => {
           <div className="lg:col-span-5 relative rounded-sm overflow-hidden bg-[#15271F] min-h-[360px] sm:min-h-[430px] flex flex-col justify-end group">
             <img
               src={grandBoulevardImg}
-              alt="18-meter main avenue and 9-meter internal roads with paver footpaths"
+              alt="60 Ft. main boulevard and 30 Ft. internal paved avenues with tree linings"
               className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700"
               referrerPolicy="no-referrer"
             />
@@ -89,17 +89,17 @@ export const AmenitiesBento: React.FC = () => {
                 <span>32.75% Layout Share</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
-                18m Main & 9m Internal Avenues
+                60 Ft. Main Boulevard & 30 Ft. Internal Roads
               </h3>
               <p className="mt-2 text-white/80 text-sm leading-relaxed">
-                Direct entry off Sultanpur Road with levelled carriageways, interlocking paver
-                pedestrian footpaths, kerb stones, and storm drains.
+                Approached directly off Sultanpur Road with wide paved carriageways, interlocking
+                paver footpaths, kerb stones, and 1–4m evergreen avenue trees.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Clean 3-Column Editorial Infrastructure Strip (No Boxy Icon Cards) */}
+        {/* Clean 3-Column Editorial Infrastructure Strip */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[#DCD8CE]">
           {utilityPillars.map((item) => (
             <div key={item.index} className="space-y-3">

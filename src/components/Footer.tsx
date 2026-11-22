@@ -1,5 +1,15 @@
 import React from 'react';
-import { Mail, Building2, MapPin, ShieldCheck, ExternalLink, FileText, ClipboardList } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  Globe,
+  Building2,
+  MapPin,
+  ShieldCheck,
+  ExternalLink,
+  FileText,
+  ClipboardList,
+} from 'lucide-react';
 import { RERA_DETAILS } from '../data/rera';
 
 interface FooterProps {
@@ -26,8 +36,8 @@ export const Footer: React.FC<FooterProps> = ({
             TRIIVANTA <span className="text-[#9A7428]">GOLD</span>
           </a>
           <p className="text-xs leading-relaxed">
-            A U.P. RERA registered 38-plot residential enclave spanning 19,689 Sq.Mt. (4.87 Acres)
-            on Sultanpur Road, Nizampur, Gosainganj, Lucknow.
+            A 45-acre gated township vision launching Phase 1 with 38 U.P. RERA registered plots
+            across 19,689 Sq.Mt. (4.87 Acres) on Sultanpur Road, Gosainganj, Lucknow.
           </p>
           <button
             type="button"
@@ -46,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({
           <ul className="space-y-2.5">
             <li>
               <a href="#philosophy" className="hover:text-[#15271F] transition-colors">
-                Project Philosophy
+                Project Vision
               </a>
             </li>
             <li>
@@ -56,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({
             </li>
             <li>
               <a href="#collections" className="hover:text-[#15271F] transition-colors">
-                38-Plot Schedule
+                38-Plot Ledger & Rates
               </a>
             </li>
             <li>
@@ -80,27 +90,47 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Promoter & Site Address Col (3 cols) */}
         <div className="lg:col-span-3">
           <h4 className="text-[#15271F] font-semibold uppercase tracking-[0.14em] text-[11px] mb-4">
-            Promoter & Site Office
+            Promoter & Investor Desk
           </h4>
           <ul className="space-y-3">
             <li className="flex items-start gap-2.5">
               <Building2 className="w-4 h-4 text-[#9A7428] shrink-0 mt-0.5" />
               <div>
                 <div className="text-[#18221D] font-semibold">{RERA_DETAILS.promoterName}</div>
-                <div className="mt-0.5">Reg. Office: {RERA_DETAILS.promoterOffice}</div>
+                <div className="mt-0.5">HQ: {RERA_DETAILS.promoterOffice}</div>
               </div>
             </li>
             <li className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-[#9A7428] shrink-0 mt-0.5" />
-              <span>Project Site: {RERA_DETAILS.fullProjectAddress}</span>
+              <span>Site: {RERA_DETAILS.fullProjectAddress}</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Phone className="w-4 h-4 text-[#9A7428] shrink-0" />
+              <a
+                href={RERA_DETAILS.helplineHref}
+                className="font-mono text-[#18221D] hover:text-[#9A7428] transition-colors tabular-nums"
+              >
+                {RERA_DETAILS.helplineDisplay}
+              </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail className="w-4 h-4 text-[#9A7428] shrink-0" />
               <a
-                href="mailto:info@triivantagold.com"
+                href={`mailto:${RERA_DETAILS.email}`}
                 className="font-mono text-[#18221D] hover:text-[#9A7428] transition-colors"
               >
-                info@triivantagold.com
+                {RERA_DETAILS.email}
+              </a>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Globe className="w-4 h-4 text-[#9A7428] shrink-0" />
+              <a
+                href={RERA_DETAILS.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[#18221D] hover:text-[#9A7428] transition-colors"
+              >
+                {RERA_DETAILS.websiteDisplay}
               </a>
             </li>
           </ul>
