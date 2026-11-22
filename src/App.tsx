@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProjectPhilosophy } from './components/ProjectPhilosophy';
+import { GrandEntranceSpotlight } from './components/GrandEntranceSpotlight';
 import { MasterPlanExplorer } from './components/MasterPlanExplorer';
 import { LivingCollections } from './components/LivingCollections';
 import { AmenitiesBento } from './components/AmenitiesBento';
@@ -53,6 +54,9 @@ export default function App() {
           onOpenVipModal={scrollToVipRegistration}
           onOpenCertificate={() => setIsCertificateOpen(true)}
         />
+
+        {/* Signature USP: 100-Foot Grand Entrance with Gothic Pillars & Palm Avenue */}
+        <GrandEntranceSpotlight onOpenVipModal={scrollToVipRegistration} />
 
         {/* Master Planning Perspectives & Land Allocation Statement */}
         <MasterPlanExplorer onOpenSpecsSheet={() => setIsSpecsOpen(true)} />

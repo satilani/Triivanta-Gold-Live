@@ -66,17 +66,20 @@ export const Hero: React.FC<HeroProps> = ({
                 <span className="text-white/90">{RERA_DETAILS.shortLocation}</span>
               </div>
 
-              {/* Serene Editorial Display Headline */}
-              <h1 className="font-display font-medium text-4xl sm:text-6xl lg:text-[64px] text-white leading-[1.06] tracking-tight text-balance max-w-3xl">
-                Where <span className="italic text-[#E5C987]">Luxury</span> Meets Land.
+              {/* Bold Hero Brand Title & Editorial Tagline */}
+              <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-[68px] text-white tracking-[0.1em] leading-[1.04] text-balance max-w-3xl">
+                TRIIVANTA <span className="text-[#E5C987]">GOLD</span>
+                <span className="block mt-2 font-medium text-2xl sm:text-4xl lg:text-[42px] tracking-tight text-white/95 leading-[1.12]">
+                  Where <span className="italic text-[#E5C987]">Luxury</span> Meets Land.
+                </span>
               </h1>
 
-              <p className="mt-5 text-white/85 text-base sm:text-lg max-w-2xl leading-relaxed font-light">
-                TRIIVANTA GOLD by{' '}
-                <span className="text-white font-medium">{RERA_DETAILS.promoterName}</span> opens
-                Phase 1 with <span className="text-white font-medium">38 exclusive freehold plots</span>{' '}
-                on Sultanpur Road, Lucknow — anchored by a 60 Ft. (18m) main boulevard, 30,000
-                Sq.Ft. central green park, and complete underground civic infrastructure.
+              <p className="mt-5 text-white/88 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+                A 45-acre gated township vision on Sultanpur Road, opening Phase 1 with{' '}
+                <span className="text-white font-medium">38 private freehold plots</span>—welcoming
+                you through a landmark{' '}
+                <span className="text-[#E5C987] font-medium">100-foot grand entrance</span> into
+                wide avenues and timeless serenity.
               </p>
 
               {/* Refined Primary & Secondary Actions */}
