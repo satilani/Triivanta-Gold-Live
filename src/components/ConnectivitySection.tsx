@@ -19,7 +19,7 @@ export const ConnectivitySection: React.FC = () => {
       category: 'transit',
       name: 'Sultanpur Road Growth Corridor',
       time: '0 Min',
-      detail: 'Direct 60 Ft. (18m) boulevard approach with connectivity to the proposed 80m Vigyan Path loop',
+      detail: '100 Ft. Grand Entrance directly on proposed 24-meter Road',
     },
     {
       category: 'education',
@@ -83,8 +83,8 @@ export const ConnectivitySection: React.FC = () => {
               </h2>
               <p className="mt-5 text-sm sm:text-base text-[#535E58] leading-relaxed">
                 Quietly insulated inside a gated enclave at Vill. - Nizampur, Gosainganj, yet
-                directly connected to the Sultanpur Road Growth Corridor and the proposed 80-meter
-                Vigyan Path loop—placing schools, IT campuses, hospitals, and retail within minutes.
+                directly connected to the Sultanpur Road Growth Corridor and the proposed 24-meter
+                Road—placing schools, IT campuses, hospitals, and retail within minutes.
               </p>
             </div>
 

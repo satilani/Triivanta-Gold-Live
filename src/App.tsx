@@ -6,7 +6,6 @@ import { GrandEntranceSpotlight } from './components/GrandEntranceSpotlight';
 import { MasterPlanExplorer } from './components/MasterPlanExplorer';
 import { LivingCollections } from './components/LivingCollections';
 import { AmenitiesBento } from './components/AmenitiesBento';
-import { SpecificationsSection } from './components/SpecificationsSection';
 import { ConnectivitySection } from './components/ConnectivitySection';
 import { ReraComplianceSection } from './components/ReraComplianceSection';
 import { VipRegistration } from './components/VipRegistration';
@@ -66,9 +65,6 @@ export default function App() {
 
         {/* Open Greens, Avenues & Underground Civic Infrastructure */}
         <AmenitiesBento />
-
-        {/* 12-Point Project Specifications Editorial Ledger */}
-        <SpecificationsSection onOpenSpecsSheet={() => setIsSpecsOpen(true)} />
 
         {/* Sultanpur Road Location Advantage & Drive-Time Ledger */}
         <ConnectivitySection />

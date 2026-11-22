@@ -24,7 +24,7 @@ export const ReraComplianceSection: React.FC<ReraComplianceSectionProps> = ({
       value: RERA_DETAILS.fullProjectAddress,
     },
     { label: 'Registration Date', value: RERA_DETAILS.registrationDate, mono: true },
-    { label: 'Proposed Completion Date', value: RERA_DETAILS.proposedCompletionDate, mono: true },
+    { label: 'Approved From', value: 'Zila Panchayat Lucknow & UPRERA' },
   ];
 
   return (

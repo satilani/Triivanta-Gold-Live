@@ -75,11 +75,6 @@ export const Footer: React.FC<FooterProps> = ({
               </a>
             </li>
             <li>
-              <a href="#specifications" className="hover:text-[#15271F] transition-colors">
-                Specifications
-              </a>
-            </li>
-            <li>
               <a href="#connectivity" className="hover:text-[#15271F] transition-colors">
                 Sultanpur Road Location
               </a>

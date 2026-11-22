@@ -37,7 +37,7 @@ export const RERA_DETAILS = {
   proposedCompletionDate: '26-08-2029',
   validityPeriod: '2 Years 9 Months 21 Days (17-11-2026 to 26-08-2029)',
   promoterName: 'KSGSK INFRA PROJECTS PRIVATE LIMITED',
-  promoterOffice: 'A-52, Indira Nagar, Lucknow-226016',
+  promoterOffice: 'Indira Nagar, Lucknow-226016',
   authorityName: 'Uttar Pradesh Real Estate Regulatory Authority (U.P. RERA)',
   authorityShort: 'U.P. RERA',
   authorityUrl: 'https://www.up-rera.in',

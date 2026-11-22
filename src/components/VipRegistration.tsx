@@ -87,9 +87,9 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
   return (
     <section id="vip-register" className="py-24 bg-white border-b border-[#E6E3DB]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-10 gap-x-12 lg:gap-x-16 items-start">
           {/* Left Column: Editorial Invitation Context (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-10">
+          <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
                 Private Consultation · 38 Exclusive Plots
@@ -144,35 +144,6 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Direct Investor Desk & Promoter Trust Note */}
-            <div className="p-5 bg-[#F5F4EF] border border-[#E2DFD7] rounded-sm text-xs text-[#535E58] space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E2DFD7]">
-                <span className="uppercase tracking-[0.14em] font-semibold text-[#9A7428] text-[11px]">
-                  Direct Investor Desk
-                </span>
-                <a
-                  href={RERA_DETAILS.helplineHref}
-                  className="font-mono text-sm font-semibold text-[#15271F] hover:text-[#9A7428] tabular-nums"
-                >
-                  {RERA_DETAILS.helplineDisplay}
-                </a>
-              </div>
-              <div className="flex items-start gap-3">
-                <Shield className="w-4 h-4 text-[#15271F] shrink-0 mt-0.5" />
-                <span>
-                  Managed directly by{' '}
-                  <strong className="text-[#15271F]">{RERA_DETAILS.promoterName}</strong>,{' '}
-                  {RERA_DETAILS.promoterOffice} ·{' '}
-                  <a
-                    href={`mailto:${RERA_DETAILS.email}`}
-                    className="font-mono text-[#15271F] hover:text-[#9A7428]"
-                  >
-                    {RERA_DETAILS.email}
-                  </a>
-                </span>
               </div>
             </div>
           </div>
@@ -448,6 +419,38 @@ export const VipRegistration: React.FC<VipRegistrationProps> = ({
                 </form>
               </div>
             )}
+          </div>
+
+          {/* Full-Width Direct Investor Desk & Promoter Trust Bar */}
+          <div className="lg:col-span-12 w-full p-5 sm:p-6 bg-[#F5F4EF] border border-[#E2DFD7] rounded-sm text-xs text-[#535E58] flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex items-start sm:items-center gap-3">
+              <Shield className="w-4 h-4 text-[#15271F] shrink-0 mt-0.5 sm:mt-0" />
+              <span className="leading-relaxed">
+                <strong className="uppercase tracking-[0.14em] font-semibold text-[#9A7428] text-[11px] mr-2">
+                  Direct Investor Desk
+                </strong>
+                Managed directly by{' '}
+                <strong className="text-[#15271F]">{RERA_DETAILS.promoterName}</strong>,{' '}
+                {RERA_DETAILS.promoterOffice} ·{' '}
+                <a
+                  href={`mailto:${RERA_DETAILS.email}`}
+                  className="font-mono text-[#15271F] hover:text-[#9A7428]"
+                >
+                  {RERA_DETAILS.email}
+                </a>
+              </span>
+            </div>
+            <div className="flex items-center gap-3 md:pl-6 md:border-l md:border-[#DCD8CE] shrink-0">
+              <span className="uppercase tracking-[0.14em] font-semibold text-[#535E58] text-[11px]">
+                Helpline
+              </span>
+              <a
+                href={RERA_DETAILS.helplineHref}
+                className="font-mono text-sm sm:text-base font-semibold text-[#15271F] hover:text-[#9A7428] tabular-nums whitespace-nowrap"
+              >
+                {RERA_DETAILS.helplineDisplay}
+              </a>
+            </div>
           </div>
         </div>
       </div>
