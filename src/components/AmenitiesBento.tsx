@@ -55,7 +55,7 @@ export const AmenitiesBento: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
             <div className="relative z-10 p-7 sm:p-9">
-              <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#F2D99B] font-semibold mb-2">
+              <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#fbd66f] sm:text-[#F2D99B] font-semibold mb-2">
                 <span>{TOWNSHIP_VISION.centralParkSqftLabel} Park Zone</span>
                 <span aria-hidden="true">·</span>
                 <span>{AREA_STATEMENT.greenAreaSqm.toLocaleString()} Sq.Mt. (15%)</span>
@@ -83,7 +83,7 @@ export const AmenitiesBento: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
             <div className="relative z-10 p-7 sm:p-9">
-              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#F2D99B] font-semibold mb-2">
+              <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#ffdb6b] sm:text-[#F2D99B] font-semibold mb-2">
                 <span>{AREA_STATEMENT.roadAreaSqm.toLocaleString()} Sq.Mt.</span>
                 <span aria-hidden="true">·</span>
                 <span>32.75% Layout Share</span>

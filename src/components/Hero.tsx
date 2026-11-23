@@ -54,11 +54,11 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Lower-Left Editorial Composition + Quiet RERA Reference */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-14 sm:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 py-12 sm:px-6 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
             <div className="lg:col-span-8">
               {/* Unboxed Metadata Line */}
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-[0.14em] uppercase text-[#F2D99B] font-medium mb-5">
+              <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[12px] leading-[11px] sm:text-xs sm:leading-normal tracking-[0.14em] uppercase text-[#F2D99B] font-medium mb-5">
                 <span>45-Acre Township Vision · Phase 1 Launch</span>
                 <span aria-hidden="true" className="text-white/35">
                   ·
@@ -67,14 +67,14 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* Bold Hero Brand Title & Editorial Tagline */}
-              <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-[68px] text-white tracking-[0.1em] leading-[1.04] text-balance max-w-3xl">
+              <h1 className="font-display font-bold text-[42px] sm:text-6xl lg:text-[68px] text-white tracking-[0.08em] sm:tracking-[0.1em] leading-[1.04] text-balance max-w-3xl">
                 TRIIVANTA <span className="text-[#F2D99B]">GOLD</span>
                 <span className="block mt-2 font-medium text-2xl sm:text-4xl lg:text-[42px] tracking-tight text-white/95 leading-[1.12]">
                   Where <span className="italic text-[#F2D99B]">Luxury</span> Meets Land.
                 </span>
               </h1>
 
-              <p className="mt-5 text-white/95 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
+              <p className="mt-5 text-white/95 text-[14px] sm:text-lg max-w-xl leading-relaxed font-normal">
                 A 45-acre gated township vision on Sultanpur Road, opening Phase 1 with{' '}
                 <span className="text-white font-medium">38 private freehold plots</span>—welcoming
                 you through a landmark{' '}
@@ -83,22 +83,22 @@ export const Hero: React.FC<HeroProps> = ({
               </p>
 
               {/* Refined Primary & Secondary Actions */}
-              <div className="mt-9 flex flex-wrap items-center gap-4">
+              <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
                 <button
                   type="button"
                   onClick={onOpenVipModal}
-                  className="px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#15271F] bg-white hover:bg-[#F5F4EF] active:scale-[0.98] rounded-sm transition-all duration-200 inline-flex items-center gap-2.5 whitespace-nowrap cursor-pointer"
+                  className="w-full sm:w-auto px-5 sm:px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#15271F] bg-white hover:bg-[#F5F4EF] active:scale-[0.98] rounded-sm transition-all duration-200 inline-flex items-center justify-center gap-2.5 whitespace-nowrap cursor-pointer"
                 >
                   <span>Book a Guided Site Visit</span>
-                  <ArrowRight className="w-4 h-4 text-[#7A5612]" />
+                  <ArrowRight className="w-4 h-4 text-[#7A5612] shrink-0" />
                 </button>
 
                 <button
                   type="button"
                   onClick={onOpenBrochureModal}
-                  className="px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-medium text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/35 rounded-sm transition-all duration-200 inline-flex items-center gap-2 whitespace-nowrap cursor-pointer"
+                  className="w-full sm:w-auto px-5 sm:px-7 py-3.5 text-xs uppercase tracking-[0.14em] sm:tracking-[0.15em] font-medium text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/35 rounded-sm transition-all duration-200 inline-flex items-center justify-center text-center gap-2 whitespace-normal sm:whitespace-nowrap cursor-pointer"
                 >
-                  <FileText className="w-4 h-4 text-[#F2D99B]" />
+                  <FileText className="w-4 h-4 text-[#F2D99B] shrink-0" />
                   <span>Download RERA-Approved Project Dossier</span>
                 </button>
               </div>
