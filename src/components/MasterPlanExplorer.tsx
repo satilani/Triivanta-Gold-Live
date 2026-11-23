@@ -81,14 +81,14 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
+            <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#7A5612] mb-3">
               Master Planning & Proportions
             </p>
             <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
               Balanced Land Use Built for Openness.
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-[#535E58] max-w-md leading-relaxed">
+          <p className="text-sm sm:text-base text-[#2D3933] max-w-md leading-relaxed">
             Across 19,689 Sq.Mt. (4.87 Acres) directly off Sultanpur Road, over half the net
             enclave is reserved for wide roads, parks, and shared civic amenities.
           </p>
@@ -106,11 +106,11 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/70 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-xs text-white/90">
+              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-xs text-white/95">
                 <span className="font-medium tracking-wide">
                   {currentLayer.index}. {currentLayer.title}
                 </span>
-                <span className="text-white/70">Artistic Impression</span>
+                <span className="text-white/95">Artistic Impression</span>
               </div>
             </div>
 
@@ -127,12 +127,12 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
                       className={`text-left px-4 py-2.5 rounded-sm text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap ${
                         active
                           ? 'bg-[#15271F] text-white'
-                          : 'bg-[#F5F4EF] text-[#535E58] hover:text-[#15271F]'
+                          : 'bg-[#F5F4EF] text-[#2D3933] hover:text-[#15271F]'
                       }`}
                     >
                       <span
                         className={`font-mono mr-2 ${
-                          active ? 'text-[#E5C987]' : 'text-[#9A7428]'
+                          active ? 'text-[#F2D99B]' : 'text-[#7A5612]'
                         }`}
                       >
                         {layer.index}
@@ -143,7 +143,26 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
                 })}
               </div>
 
-              <p className="text-sm text-[#535E58] leading-relaxed">{currentLayer.summary}</p>
+              <div className="space-y-3">
+                {planLayers.map((layer) => {
+                  const active = activeLayer === layer.id;
+                  return (
+                    <div
+                      key={layer.id}
+                      className={
+                        active
+                          ? 'text-sm text-[#0E1713] leading-relaxed'
+                          : 'text-xs text-[#2D3933] leading-relaxed pt-2.5 border-t border-[#ECEAE2]'
+                      }
+                    >
+                      <span className="font-mono text-[11px] font-semibold text-[#7A5612] mr-2">
+                        {layer.index}. {layer.title}:
+                      </span>
+                      <span>{layer.summary}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
@@ -152,14 +171,14 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
             <div>
               <div className="flex items-baseline justify-between pb-5 border-b border-[#E6E3DB] mb-6">
                 <div>
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#9A7428] font-semibold block">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#7A5612] font-semibold block">
                     Area Statement
                   </span>
                   <h3 className="font-display text-2xl font-semibold text-[#15271F] mt-1">
                     Land Allocation Breakdown
                   </h3>
                 </div>
-                <span className="font-mono text-xs text-[#535E58] tabular-nums">
+                <span className="font-mono text-xs text-[#2D3933] tabular-nums">
                   {AREA_STATEMENT.totalLandHectares} Ha
                 </span>
               </div>
@@ -167,26 +186,26 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
               {/* Clean Key Totals Grid */}
               <div className="grid grid-cols-2 gap-x-6 gap-y-4 pb-6 mb-6 border-b border-[#E6E3DB]">
                 <div>
-                  <span className="text-xs text-[#535E58] block">Total Project Land</span>
+                  <span className="text-xs text-[#2D3933] block">Total Project Land</span>
                   <span className="font-mono text-base font-semibold text-[#15271F] tabular-nums mt-0.5 block">
                     {AREA_STATEMENT.totalLandSqm.toLocaleString()} Sq.Mt.
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs text-[#535E58] block">Net Layout Area</span>
+                  <span className="text-xs text-[#2D3933] block">Net Layout Area</span>
                   <span className="font-mono text-base font-semibold text-[#15271F] tabular-nums mt-0.5 block">
                     {AREA_STATEMENT.netLandAreaSqm.toLocaleString()} Sq.Mt.
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs text-[#535E58] block">Road Widening Reserve</span>
-                  <span className="font-mono text-sm font-medium text-[#18221D] tabular-nums mt-0.5 block">
+                  <span className="text-xs text-[#2D3933] block">Road Widening Reserve</span>
+                  <span className="font-mono text-sm font-medium text-[#0E1713] tabular-nums mt-0.5 block">
                     {AREA_STATEMENT.roadWideningSqm} Sq.Mt.
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs text-[#535E58] block">Boundary Wall (2.1m H)</span>
-                  <span className="font-mono text-sm font-medium text-[#18221D] tabular-nums mt-0.5 block">
+                  <span className="text-xs text-[#2D3933] block">Boundary Wall (2.1m H)</span>
+                  <span className="font-mono text-sm font-medium text-[#0E1713] tabular-nums mt-0.5 block">
                     {AREA_STATEMENT.boundaryWallLengthM} RMT
                   </span>
                 </div>
@@ -197,7 +216,7 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
                 {areaRows.map((row) => (
                   <div key={row.label}>
                     <div className="flex items-baseline justify-between text-xs mb-2 gap-3">
-                      <span className="font-medium text-[#18221D]">{row.label}</span>
+                      <span className="font-medium text-[#0E1713]">{row.label}</span>
                       <span className="font-mono text-[#15271F] font-semibold tabular-nums shrink-0">
                         {row.area} ({row.percent})
                       </span>
@@ -216,10 +235,10 @@ export const MasterPlanExplorer: React.FC<MasterPlanExplorerProps> = ({ onOpenSp
                 onClick={onOpenSpecsSheet}
                 className="w-full px-5 py-3 text-xs uppercase tracking-[0.14em] font-semibold text-white bg-[#15271F] hover:bg-[#1F372C] rounded-sm inline-flex items-center justify-center gap-2 transition-colors whitespace-nowrap cursor-pointer"
               >
-                <FileText className="w-3.5 h-3.5 text-[#E5C987]" />
+                <FileText className="w-3.5 h-3.5 text-[#F2D99B]" />
                 <span>View Official Specification Sheet</span>
               </button>
-              <p className="text-[11px] text-[#535E58] text-center">
+              <p className="text-[11px] text-[#2D3933] text-center">
                 52.75% of net area reserved for wide roads, parks & shared amenities
               </p>
             </div>

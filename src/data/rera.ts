@@ -17,7 +17,6 @@ export interface SanctionedPlot {
   areaSqm: number;
   areaSqft: number;
   facing: PlotFacing;
-  launchRatePerSqft: number;
   category: 'compact' | 'standard' | 'grand' | 'signature';
   frontageRoad: '18m (60 Ft.) Main Boulevard' | '9m (30 Ft.) Internal Road';
 }
@@ -62,22 +61,21 @@ export const TOWNSHIP_VISION = {
   internalRoadLabel: '30 Ft. (9m)',
   centralParkSqftLabel: '30,000 Sq.Ft.',
   openAreaPercentLabel: '52.75%',
-  startingRatePerSqft: 3100,
-  rateTiers: [
+  positioningTiers: [
     {
-      label: 'Classic · Executive · Premium',
-      rate: 3100,
-      note: 'Plots 05–08, 11–16, 19–21, 23–30',
+      label: 'Internal Avenue Plots',
+      subtitle: 'Classic · Executive · Premium',
+      note: 'Serene 30 Ft. (9m) internal sector roads',
     },
     {
-      label: 'Grand · Elite · Special · Park-Front',
-      rate: 3410,
-      note: 'Plots 01–04, 09–10, 17–18, 22, 31–36',
+      label: 'Park & Corner Advantage',
+      subtitle: 'Grand · Elite · Special · Park-Front',
+      note: 'Central Park & corner vantage plots',
     },
     {
       label: 'Signature Boulevard Frontage',
-      rate: 3720,
-      note: 'Plots A-1 & A-2',
+      subtitle: 'Plots A-1 & A-2',
+      note: 'Direct 60 Ft. (18m) main boulevard frontage',
     },
   ],
 } as const;
@@ -119,49 +117,48 @@ type RawPlotTuple = [
   number, // areaSqft
   number, // areaSqm
   PlotFacing, // facing
-  number, // launchRatePerSqft
   '18m (60 Ft.) Main Boulevard' | '9m (30 Ft.) Internal Road',
 ];
 
 const RAW_PLOTS: RawPlotTuple[] = [
-  ['A-1', 'Shape', 'As per shape', '19.39m × 18.50m', 3861, 358.71, 'West', 3720, '18m (60 Ft.) Main Boulevard'],
-  ['A-2', 'Shape', 'As per shape', '19.49m × 20.74m', 4351, 404.22, 'West', 3720, '18m (60 Ft.) Main Boulevard'],
-  ['01', 'Shape', 'As per shape', '14.63m × 28.71m', 4589, 420.02, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['02', 'Shape', 'As per shape', '13.61m × 28.71m', 4219, 390.74, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['03', 'Shape', 'As per shape', '14.63m × 28.71m', 4534, 420.02, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['04', 'Shape', 'As per shape', '10.51m × 19.86m', 2372, 208.72, 'West', 3410, '9m (30 Ft.) Internal Road'],
-  ['05', 'Executive', "30' × 65'", '9.14m × 19.86m', 1950, 181.52, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['06', 'Executive', "30' × 65'", '14.50m × 14.30m', 1950, 207.35, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['07', 'Executive', "30' × 59'", '14.26m × 14.47m', 1775, 206.34, 'East', 3100, '18m (60 Ft.) Main Boulevard'],
-  ['08', 'Executive', "30' × 65'", '9.15m × 19.81m', 1950, 181.26, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['09', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'East', 3410, '9m (30 Ft.) Internal Road'],
-  ['10', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'West', 3410, '9m (30 Ft.) Internal Road'],
-  ['11', 'Executive', "30' × 65'", '9.15m × 19.81m', 1950, 181.26, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['12', 'Executive', "30' × 65'", '9.15m × 19.81m', 1950, 181.26, 'West', 3100, '18m (60 Ft.) Main Boulevard'],
-  ['13', 'Shape', 'As per shape', '10.97m × 27.20m', 3264, 298.38, 'West', 3100, '18m (60 Ft.) Main Boulevard'],
-  ['14', 'Shape', 'As per shape', '9.25m × 19.81m', 2012, 183.24, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['15', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['16', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['17', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'East', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['18', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'West', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['19', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['20', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['21', 'Shape', 'As per shape', '11.15m × 19.81m', 2234, 220.88, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['22', 'Special', "36' × 55'", '10.97m × 16.76m', 1980, 183.85, 'East', 3410, '9m (30 Ft.) Internal Road'],
-  ['23', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['24', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['25', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['26', 'Shape', 'As per shape', '11.18m × 12.29m', 1181, 137.4, 'East', 3100, '9m (30 Ft.) Internal Road'],
-  ['27', 'Shape', 'As per shape', '13.33m × 12.30m', 1582, 163.95, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['28', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['29', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['30', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'West', 3100, '9m (30 Ft.) Internal Road'],
-  ['31', 'Special', "36' × 55'", '10.97m × 16.76m', 1980, 183.85, 'West', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['32', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['33', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['34', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['35', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
-  ['36', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', 3410, '18m (60 Ft.) Main Boulevard'],
+  ['A-1', 'Shape', 'As per shape', '19.39m × 18.50m', 3861, 358.71, 'West', '18m (60 Ft.) Main Boulevard'],
+  ['A-2', 'Shape', 'As per shape', '19.49m × 20.74m', 4351, 404.22, 'West', '18m (60 Ft.) Main Boulevard'],
+  ['01', 'Shape', 'As per shape', '14.63m × 28.71m', 4589, 420.02, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['02', 'Shape', 'As per shape', '13.61m × 28.71m', 4219, 390.74, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['03', 'Shape', 'As per shape', '14.63m × 28.71m', 4534, 420.02, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['04', 'Shape', 'As per shape', '10.51m × 19.86m', 2372, 208.72, 'West', '9m (30 Ft.) Internal Road'],
+  ['05', 'Executive', "30' × 65'", '9.14m × 19.86m', 1950, 181.52, 'West', '9m (30 Ft.) Internal Road'],
+  ['06', 'Executive', "30' × 65'", '14.50m × 14.30m', 1950, 207.35, 'West', '9m (30 Ft.) Internal Road'],
+  ['07', 'Executive', "30' × 59'", '14.26m × 14.47m', 1775, 206.34, 'East', '18m (60 Ft.) Main Boulevard'],
+  ['08', 'Executive', "30' × 65'", '9.15m × 19.81m', 1950, 181.26, 'East', '9m (30 Ft.) Internal Road'],
+  ['09', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'East', '9m (30 Ft.) Internal Road'],
+  ['10', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'West', '9m (30 Ft.) Internal Road'],
+  ['11', 'Executive', "30' × 65'", '9.15m × 19.81m', 1950, 181.26, 'West', '9m (30 Ft.) Internal Road'],
+  ['12', 'Executive', "30' × 65'", '9.15m × 19.81m', 1950, 181.26, 'West', '18m (60 Ft.) Main Boulevard'],
+  ['13', 'Shape', 'As per shape', '10.97m × 27.20m', 3264, 298.38, 'West', '18m (60 Ft.) Main Boulevard'],
+  ['14', 'Shape', 'As per shape', '9.25m × 19.81m', 2012, 183.24, 'East', '9m (30 Ft.) Internal Road'],
+  ['15', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'East', '9m (30 Ft.) Internal Road'],
+  ['16', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'East', '9m (30 Ft.) Internal Road'],
+  ['17', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'East', '18m (60 Ft.) Main Boulevard'],
+  ['18', 'Grand', "40' × 65'", '12.19m × 19.81m', 2600, 241.48, 'West', '18m (60 Ft.) Main Boulevard'],
+  ['19', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'West', '9m (30 Ft.) Internal Road'],
+  ['20', 'Premium', "32'-6\" × 65'", '9.90m × 19.81m', 2112, 196.11, 'West', '9m (30 Ft.) Internal Road'],
+  ['21', 'Shape', 'As per shape', '11.15m × 19.81m', 2234, 220.88, 'West', '9m (30 Ft.) Internal Road'],
+  ['22', 'Special', "36' × 55'", '10.97m × 16.76m', 1980, 183.85, 'East', '9m (30 Ft.) Internal Road'],
+  ['23', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'East', '9m (30 Ft.) Internal Road'],
+  ['24', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'East', '9m (30 Ft.) Internal Road'],
+  ['25', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'East', '9m (30 Ft.) Internal Road'],
+  ['26', 'Shape', 'As per shape', '11.18m × 12.29m', 1181, 137.4, 'East', '9m (30 Ft.) Internal Road'],
+  ['27', 'Shape', 'As per shape', '13.33m × 12.30m', 1582, 163.95, 'West', '9m (30 Ft.) Internal Road'],
+  ['28', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'West', '9m (30 Ft.) Internal Road'],
+  ['29', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'West', '9m (30 Ft.) Internal Road'],
+  ['30', 'Classic', "30' × 55'", '9.14m × 16.76m', 1650, 153.18, 'West', '9m (30 Ft.) Internal Road'],
+  ['31', 'Special', "36' × 55'", '10.97m × 16.76m', 1980, 183.85, 'West', '18m (60 Ft.) Main Boulevard'],
+  ['32', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['33', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['34', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['35', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', '18m (60 Ft.) Main Boulevard'],
+  ['36', 'Elite', "40' × 80'", '12.19m × 24.38m', 3200, 297.19, 'North', '18m (60 Ft.) Main Boulevard'],
 ];
 
 export const SANCTIONED_PLOTS: SanctionedPlot[] = RAW_PLOTS.map(
@@ -173,7 +170,6 @@ export const SANCTIONED_PLOTS: SanctionedPlot[] = RAW_PLOTS.map(
     areaSqft,
     areaSqm,
     facing,
-    launchRatePerSqft,
     frontageRoad,
   ]) => ({
     plotNo,
@@ -183,19 +179,7 @@ export const SANCTIONED_PLOTS: SanctionedPlot[] = RAW_PLOTS.map(
     areaSqft,
     areaSqm,
     facing,
-    launchRatePerSqft,
     category: categorizePlot(areaSqft),
     frontageRoad,
   })
 );
-
-export function formatINR(amount: number): string {
-  return `₹${Math.round(amount).toLocaleString('en-IN')}`;
-}
-
-export function formatINRShort(amount: number): string {
-  if (amount >= 10000000) {
-    return `₹${(amount / 10000000).toFixed(2)} Cr`;
-  }
-  return `₹${(amount / 100000).toFixed(2)} Lakh`;
-}

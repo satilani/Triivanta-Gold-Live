@@ -1,17 +1,17 @@
 export interface VipRegistrationData {
   fullName: string;
-  email: string;
+  email?: string;
   phone: string;
   preferredConfiguration: 'villa-plots' | 'bespoke-villas' | 'sky-residences' | 'commercial';
-  investmentHorizon: string;
-  source: string;
+  investmentHorizon?: string;
+  source?: string;
   notes?: string;
 }
 
 export interface VipPassDetails {
   tokenId: string;
   fullName: string;
-  email: string;
+  email?: string;
   phone: string;
   configuration: string;
   timestamp: string;

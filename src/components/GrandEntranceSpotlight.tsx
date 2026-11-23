@@ -39,16 +39,16 @@ export const GrandEntranceSpotlight: React.FC<GrandEntranceSpotlightProps> = ({
         {/* Editorial Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-14">
           <div className="lg:col-span-7">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#E5C987] font-semibold block mb-4">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#F2D99B] font-semibold block mb-4">
               Signature Architectural USP · The Arrival
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white font-medium tracking-tight leading-[1.1] text-balance">
-              The 100-Foot <span className="italic text-[#E5C987]">Grand Entrance</span>.
+              The 100-Foot <span className="italic text-[#F2D99B]">Grand Entrance</span>.
             </h2>
           </div>
 
           <div className="lg:col-span-5">
-            <p className="text-white/80 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-white/95 text-sm sm:text-base leading-relaxed font-normal">
               A rare first impression on Sultanpur Road—where carved gothic pillars rise against a
               backdrop of exquisite swaying palm trees, drawing every homecoming seamlessly onto a
               60-foot tree-lined boulevard.
@@ -66,11 +66,11 @@ export const GrandEntranceSpotlight: React.FC<GrandEntranceSpotlightProps> = ({
               referrerPolicy="no-referrer"
             />
           </div>
-          <div className="px-5 py-3.5 bg-[#101F18] border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-white/70">
+          <div className="px-5 py-3.5 bg-[#101F18] border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-white/95">
             <span className="tracking-wide">
               100 Ft. Proposed Grand Entrance · Gothic Pillars &amp; Palm Avenue
             </span>
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#E5C987]">
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#F2D99B]">
               Artistic Impression · Sultanpur Road
             </span>
           </div>
@@ -80,19 +80,19 @@ export const GrandEntranceSpotlight: React.FC<GrandEntranceSpotlightProps> = ({
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-white/15">
           {ENTRANCE_PILLARS.map((item) => (
             <div key={item.index} className="flex flex-col">
-              <span className="font-mono text-xs tracking-[0.18em] text-[#E5C987] mb-3">
+              <span className="font-mono text-xs tracking-[0.18em] text-[#F2D99B] mb-3">
                 {item.index}
               </span>
               <h3 className="font-display text-2xl text-white font-medium tracking-tight mb-2.5">
                 {item.title}
               </h3>
-              <p className="text-sm text-white/72 leading-relaxed font-light">{item.detail}</p>
+              <p className="text-sm text-white/95 leading-relaxed font-normal">{item.detail}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-xs uppercase tracking-[0.16em] text-white/65">
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-xs uppercase tracking-[0.16em] text-white/95">
             <span>
               Gateway Span: <strong className="text-white font-mono">100 FT</strong>
             </span>
@@ -116,7 +116,7 @@ export const GrandEntranceSpotlight: React.FC<GrandEntranceSpotlightProps> = ({
             className="self-start sm:self-auto px-6 py-3 text-xs uppercase tracking-[0.16em] font-semibold text-[#15271F] bg-white hover:bg-[#F5F4EF] active:scale-[0.98] rounded-sm transition-all duration-200 inline-flex items-center gap-2.5 whitespace-nowrap cursor-pointer"
           >
             <span>Experience It In Person</span>
-            <ArrowRight className="w-4 h-4 text-[#9A7428]" />
+            <ArrowRight className="w-4 h-4 text-[#7A5612]" />
           </button>
         </div>
       </div>

@@ -25,8 +25,8 @@ export const ProjectPhilosophy: React.FC<ProjectPhilosophyProps> = ({
     },
     {
       index: '03',
-      title: 'Transparent U.P. RERA Launch Pricing',
-      body: `Registered with U.P. RERA (${RERA_DETAILS.regNumber}) with clear launch baselines starting at ₹3,100 / Sq.Ft. (Executive/Classic/Premium), ₹3,410 / Sq.Ft. (Grand/Elite/Park-Front), and ₹3,720 / Sq.Ft. (Plots A-1 & A-2).`,
+      title: 'Zila Panchayat & U.P. RERA Approved',
+      body: `Officially approved by Zila Panchayat Lucknow and registered with U.P. RERA (${RERA_DETAILS.regNumber}). Experience the layout, 100 Ft. entrance, and active site execution in person during a private guided site visit.`,
     },
   ];
 
@@ -37,20 +37,20 @@ export const ProjectPhilosophy: React.FC<ProjectPhilosophyProps> = ({
           {/* Left Editorial Narrative (6 cols) */}
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
+              <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#7A5612] mb-3">
                 The Vision · TRIIVANTA GOLD
               </p>
               <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
                 A Masterpiece of Plotting Architecture on Sultanpur Road.
               </h2>
-              <p className="mt-6 text-[#535E58] text-base leading-[1.75]">
+              <p className="mt-6 text-[#2D3933] text-base leading-[1.75]">
                 Set along Lucknow’s Sultanpur Road Growth Corridor at {RERA_DETAILS.locality},
                 TRIIVANTA GOLD dedicates{' '}
-                <strong className="font-semibold text-[#18221D]">
+                <strong className="font-semibold text-[#0E1713]">
                   {AREA_STATEMENT.roadPercent} to wide 60 Ft. (18m) & 30 Ft. (9m) roads
                 </strong>{' '}
                 and{' '}
-                <strong className="font-semibold text-[#18221D]">
+                <strong className="font-semibold text-[#0E1713]">
                   {AREA_STATEMENT.greenPercent} to landscaped parks
                 </strong>
                 . Every underground pipeline, electrical cable, transformer, and rainwater recharge
@@ -61,14 +61,14 @@ export const ProjectPhilosophy: React.FC<ProjectPhilosophyProps> = ({
               <div className="mt-10 divide-y divide-[#E6E3DB] border-t border-b border-[#E6E3DB]">
                 {pillars.map((pillar) => (
                   <div key={pillar.index} className="py-5 flex items-start gap-5">
-                    <span className="font-mono text-xs font-semibold text-[#9A7428] pt-1 shrink-0 tabular-nums">
+                    <span className="font-mono text-xs font-semibold text-[#7A5612] pt-1 shrink-0 tabular-nums">
                       {pillar.index}
                     </span>
                     <div>
                       <h3 className="font-display text-xl font-semibold text-[#15271F]">
                         {pillar.title}
                       </h3>
-                      <p className="mt-1.5 text-sm text-[#535E58] leading-relaxed">{pillar.body}</p>
+                      <p className="mt-1.5 text-sm text-[#2D3933] leading-relaxed">{pillar.body}</p>
                     </div>
                   </div>
                 ))}
@@ -82,12 +82,12 @@ export const ProjectPhilosophy: React.FC<ProjectPhilosophyProps> = ({
                 className="px-6 py-3 text-xs uppercase tracking-[0.15em] font-semibold text-white bg-[#15271F] hover:bg-[#1F372C] rounded-sm inline-flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <span>Request Plot Availability</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#E5C987]" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#F2D99B]" />
               </button>
               <button
                 type="button"
                 onClick={onOpenCertificate}
-                className="text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] hover:text-[#9A7428] underline underline-offset-4 transition-colors cursor-pointer"
+                className="text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] hover:text-[#7A5612] underline underline-offset-4 transition-colors cursor-pointer"
               >
                 Inspect U.P. RERA Form C
               </button>
@@ -106,23 +106,23 @@ export const ProjectPhilosophy: React.FC<ProjectPhilosophyProps> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/55 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-white">
                 <div>
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#E5C987] block">
+                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#F2D99B] block">
                     45-Acre Township Vision · Phase 1 Now Open
                   </span>
                   <span className="font-display text-2xl font-medium">
                     Design Your Own Legacy Residence
                   </span>
                 </div>
-                <span className="text-[11px] text-white/75 whitespace-nowrap">
+                <span className="text-[11px] text-white/92 whitespace-nowrap">
                   Artistic Impression
                 </span>
               </div>
             </div>
 
             {/* Quiet Architectural Metadata Strip below photo */}
-            <div className="pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[#535E58]">
+            <div className="pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[#2D3933]">
               <span>Promoted by {RERA_DETAILS.promoterName}</span>
-              <span className="font-mono text-[#18221D] tabular-nums">
+              <span className="font-mono text-[#0E1713] tabular-nums">
                 Phase 1: {AREA_STATEMENT.totalLandSqm.toLocaleString()} Sq.Mt. ·{' '}
                 {AREA_STATEMENT.totalPlots} Plots
               </span>

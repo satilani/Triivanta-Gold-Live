@@ -15,6 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVipModal, onOpenCertificat
     { href: '#collections', label: '38 Plots' },
     { href: '#amenities', label: 'Amenities' },
     { href: '#connectivity', label: 'Location' },
+    { href: '#faq', label: 'FAQ' },
   ];
 
   return (
@@ -25,11 +26,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVipModal, onOpenCertificat
           href="#overview"
           className="font-display font-semibold tracking-[0.2em] text-xl sm:text-2xl text-[#15271F] whitespace-nowrap shrink-0"
         >
-          TRIIVANTA <span className="text-[#9A7428]">GOLD</span>
+          TRIIVANTA <span className="text-[#7A5612]">GOLD</span>
         </a>
 
         {/* Zone 2: 5 clean single-line navigation links */}
-        <nav className="hidden lg:flex items-center gap-8 text-[13px] font-medium text-[#535E58]">
+        <nav className="hidden lg:flex items-center gap-8 text-[13px] font-medium text-[#2D3933]">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -48,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVipModal, onOpenCertificat
             onClick={onOpenVipModal}
             className="px-6 py-2.5 text-xs tracking-[0.14em] uppercase font-semibold text-white bg-[#15271F] hover:bg-[#1F372C] active:scale-[0.98] rounded-sm transition-all duration-200 whitespace-nowrap shrink-0 cursor-pointer"
           >
-            Enquire Now
+            Book a Guided Site Visit
           </button>
         </div>
 
@@ -68,13 +69,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVipModal, onOpenCertificat
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-[#E2DFD7] bg-white px-6 py-6 space-y-5">
-          <nav className="flex flex-col gap-3.5 text-sm font-medium text-[#18221D]">
+          <nav className="flex flex-col gap-3.5 text-sm font-medium text-[#0E1713]">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-1 hover:text-[#9A7428] transition-colors"
+                className="py-1 hover:text-[#7A5612] transition-colors"
               >
                 {item.label}
               </a>
@@ -89,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVipModal, onOpenCertificat
               }}
               className="w-full py-3 text-xs uppercase tracking-[0.14em] font-semibold text-white bg-[#15271F] rounded-sm text-center cursor-pointer"
             >
-              Enquire Now
+              Book a Guided Site Visit
             </button>
             <button
               type="button"
@@ -97,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVipModal, onOpenCertificat
                 setMobileMenuOpen(false);
                 onOpenCertificate();
               }}
-              className="w-full py-2.5 text-xs uppercase tracking-[0.14em] font-medium text-[#18221D] border border-[#D8D4CA] hover:border-[#9A7428] rounded-sm text-center cursor-pointer"
+              className="w-full py-2.5 text-xs uppercase tracking-[0.14em] font-medium text-[#0E1713] border border-[#D8D4CA] hover:border-[#9A7428] rounded-sm text-center cursor-pointer"
             >
               View RERA Certificate
             </button>

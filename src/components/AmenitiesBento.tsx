@@ -30,13 +30,13 @@ export const AmenitiesBento: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-2xl mb-14">
-          <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
+          <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#7A5612] mb-3">
             Botanical Greens & Civic Infrastructure
           </p>
           <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
             Designed for Living, Planned for Lasting Value.
           </h2>
-          <p className="mt-4 text-[#535E58] text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-[#2D3933] text-sm sm:text-base leading-relaxed">
             Over 50% open area pairing a {TOWNSHIP_VISION.centralParkSqftLabel} central park and{' '}
             {TOWNSHIP_VISION.mainBoulevardLabel} avenues with complete underground civic
             infrastructure.
@@ -55,7 +55,7 @@ export const AmenitiesBento: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
             <div className="relative z-10 p-7 sm:p-9">
-              <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#E5C987] font-semibold mb-2">
+              <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#F2D99B] font-semibold mb-2">
                 <span>{TOWNSHIP_VISION.centralParkSqftLabel} Park Zone</span>
                 <span aria-hidden="true">·</span>
                 <span>{AREA_STATEMENT.greenAreaSqm.toLocaleString()} Sq.Mt. (15%)</span>
@@ -65,7 +65,7 @@ export const AmenitiesBento: React.FC = () => {
               <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
                 Central Green Park, Jogger’s Track & Play Meadows
               </h3>
-              <p className="mt-2 text-white/80 text-sm max-w-xl leading-relaxed">
+              <p className="mt-2 text-white/95 text-sm max-w-xl leading-relaxed">
                 Dedicated to Phase 1 residents with manicured walking paths, jogger’s park, flower
                 avenues, wellness sit-outs, children’s play meadows, and a{' '}
                 {AREA_STATEMENT.amenitiesAreaSqm} Sq.Mt. daily-convenience shopping precinct.
@@ -83,7 +83,7 @@ export const AmenitiesBento: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/90 via-[#0D1A14]/35 to-transparent" />
             <div className="relative z-10 p-7 sm:p-9">
-              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#E5C987] font-semibold mb-2">
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[#F2D99B] font-semibold mb-2">
                 <span>{AREA_STATEMENT.roadAreaSqm.toLocaleString()} Sq.Mt.</span>
                 <span aria-hidden="true">·</span>
                 <span>32.75% Layout Share</span>
@@ -91,7 +91,7 @@ export const AmenitiesBento: React.FC = () => {
               <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
                 60 Ft. Main Boulevard & 30 Ft. Internal Roads
               </h3>
-              <p className="mt-2 text-white/80 text-sm leading-relaxed">
+              <p className="mt-2 text-white/95 text-sm leading-relaxed">
                 Approached directly off Sultanpur Road with wide paved carriageways, interlocking
                 paver footpaths, kerb stones, and 1–4m evergreen avenue trees.
               </p>
@@ -104,15 +104,15 @@ export const AmenitiesBento: React.FC = () => {
           {utilityPillars.map((item) => (
             <div key={item.index} className="space-y-3">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-mono font-semibold text-[#9A7428] tabular-nums">
+                <span className="font-mono font-semibold text-[#7A5612] tabular-nums">
                   {item.index}
                 </span>
-                <span className="font-mono text-[11px] text-[#535E58] tabular-nums">
+                <span className="font-mono text-[11px] text-[#2D3933] tabular-nums">
                   {item.kicker}
                 </span>
               </div>
               <h3 className="font-display text-2xl font-semibold text-[#15271F]">{item.title}</h3>
-              <p className="text-sm text-[#535E58] leading-relaxed">{item.body}</p>
+              <p className="text-sm text-[#2D3933] leading-relaxed">{item.body}</p>
             </div>
           ))}
         </div>

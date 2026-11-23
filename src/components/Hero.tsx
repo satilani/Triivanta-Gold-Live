@@ -26,8 +26,8 @@ export const Hero: React.FC<HeroProps> = ({
       sub: 'Phase 1 · 1,181 – 4,589 Sq.Ft.',
     },
     {
-      value: `₹${TOWNSHIP_VISION.startingRatePerSqft.toLocaleString('en-IN')} / Sq.Ft.`,
-      sub: 'Official Launch Baseline (Current Year)',
+      value: `${TOWNSHIP_VISION.entranceWidthFt} Gateway`,
+      sub: 'Grand Gothic Entrance · Proposed 24m Road',
     },
     {
       value: `${TOWNSHIP_VISION.centralParkSqftLabel}`,
@@ -49,8 +49,8 @@ export const Hero: React.FC<HeroProps> = ({
               (e.target as HTMLElement).style.display = 'none';
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1A14]/92 via-[#0D1A14]/45 to-[#0D1A14]/25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1A14]/78 via-[#0D1A14]/28 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1611]/95 via-[#0B1611]/60 to-[#0B1611]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1611]/86 via-[#0B1611]/40 to-transparent" />
         </div>
 
         {/* Lower-Left Editorial Composition + Quiet RERA Reference */}
@@ -58,27 +58,27 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             <div className="lg:col-span-8">
               {/* Unboxed Metadata Line */}
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-[0.14em] uppercase text-[#E5C987] font-medium mb-5">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-[0.14em] uppercase text-[#F2D99B] font-medium mb-5">
                 <span>45-Acre Township Vision · Phase 1 Launch</span>
                 <span aria-hidden="true" className="text-white/35">
                   ·
                 </span>
-                <span className="text-white/90">{RERA_DETAILS.shortLocation}</span>
+                <span className="text-white/95">{RERA_DETAILS.shortLocation}</span>
               </div>
 
               {/* Bold Hero Brand Title & Editorial Tagline */}
               <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-[68px] text-white tracking-[0.1em] leading-[1.04] text-balance max-w-3xl">
-                TRIIVANTA <span className="text-[#E5C987]">GOLD</span>
+                TRIIVANTA <span className="text-[#F2D99B]">GOLD</span>
                 <span className="block mt-2 font-medium text-2xl sm:text-4xl lg:text-[42px] tracking-tight text-white/95 leading-[1.12]">
-                  Where <span className="italic text-[#E5C987]">Luxury</span> Meets Land.
+                  Where <span className="italic text-[#F2D99B]">Luxury</span> Meets Land.
                 </span>
               </h1>
 
-              <p className="mt-5 text-white/88 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+              <p className="mt-5 text-white/95 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
                 A 45-acre gated township vision on Sultanpur Road, opening Phase 1 with{' '}
                 <span className="text-white font-medium">38 private freehold plots</span>—welcoming
                 you through a landmark{' '}
-                <span className="text-[#E5C987] font-medium">100-foot grand entrance</span> into
+                <span className="text-[#F2D99B] font-medium">100-foot grand entrance</span> into
                 wide avenues and timeless serenity.
               </p>
 
@@ -87,19 +87,19 @@ export const Hero: React.FC<HeroProps> = ({
                 <button
                   type="button"
                   onClick={onOpenVipModal}
-                  className="px-7 py-3.5 text-xs uppercase tracking-[0.16em] font-semibold text-[#15271F] bg-white hover:bg-[#F5F4EF] active:scale-[0.98] rounded-sm transition-all duration-200 inline-flex items-center gap-2.5 whitespace-nowrap cursor-pointer"
+                  className="px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-semibold text-[#15271F] bg-white hover:bg-[#F5F4EF] active:scale-[0.98] rounded-sm transition-all duration-200 inline-flex items-center gap-2.5 whitespace-nowrap cursor-pointer"
                 >
-                  <span>Book Site Visit</span>
-                  <ArrowRight className="w-4 h-4 text-[#9A7428]" />
+                  <span>Book a Guided Site Visit</span>
+                  <ArrowRight className="w-4 h-4 text-[#7A5612]" />
                 </button>
 
                 <button
                   type="button"
                   onClick={onOpenBrochureModal}
-                  className="px-7 py-3.5 text-xs uppercase tracking-[0.16em] font-medium text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/35 rounded-sm transition-all duration-200 inline-flex items-center gap-2 whitespace-nowrap cursor-pointer"
+                  className="px-7 py-3.5 text-xs uppercase tracking-[0.15em] font-medium text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/35 rounded-sm transition-all duration-200 inline-flex items-center gap-2 whitespace-nowrap cursor-pointer"
                 >
-                  <FileText className="w-4 h-4 text-[#E5C987]" />
-                  <span>Project Dossier</span>
+                  <FileText className="w-4 h-4 text-[#F2D99B]" />
+                  <span>Download RERA-Approved Project Dossier</span>
                 </button>
               </div>
             </div>
@@ -117,28 +117,28 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] font-semibold text-[#15271F]">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#9A7428] shrink-0" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#7A5612] shrink-0" />
                     <span>U.P. RERA Registered</span>
                   </div>
-                  <div className="mt-1 font-mono text-xs font-semibold text-[#18221D] tabular-nums truncate">
+                  <div className="mt-1 font-mono text-xs font-semibold text-[#0E1713] tabular-nums truncate">
                     {RERA_DETAILS.regNumber}
                   </div>
                   <div className="mt-1.5 flex items-center gap-3 text-[11px]">
                     <button
                       type="button"
                       onClick={onOpenCertificate}
-                      className="font-semibold text-[#9A7428] hover:text-[#785717] underline underline-offset-4 cursor-pointer"
+                      className="font-semibold text-[#7A5612] hover:text-[#5C3F0B] underline underline-offset-4 cursor-pointer"
                     >
                       View Form C
                     </button>
-                    <span className="text-[#C7C3B8]" aria-hidden="true">
+                    <span className="text-[#7A847E]" aria-hidden="true">
                       |
                     </span>
                     <a
                       href={RERA_DETAILS.authorityUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#535E58] hover:text-[#15271F]"
+                      className="text-[#2D3933] hover:text-[#15271F]"
                     >
                       {RERA_DETAILS.authorityDisplayUrl}
                     </a>
@@ -158,7 +158,7 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="font-display text-2xl sm:text-3xl font-semibold text-[#15271F] tabular-nums leading-tight">
                 {item.value}
               </span>
-              <span className="text-xs text-[#535E58] mt-1 tracking-wide">{item.sub}</span>
+              <span className="text-xs text-[#2D3933] mt-1 tracking-wide">{item.sub}</span>
             </div>
           ))}
         </div>

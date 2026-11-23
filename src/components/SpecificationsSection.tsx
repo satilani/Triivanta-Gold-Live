@@ -108,13 +108,13 @@ export const SpecificationsSection: React.FC<SpecificationsSectionProps> = ({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#9A7428] mb-3">
+            <p className="text-xs uppercase tracking-[0.22em] font-semibold text-[#7A5612] mb-3">
               Engineering & Civic Scope
             </p>
             <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#15271F] leading-[1.1] tracking-tight text-balance">
               12-Point Project Specifications.
             </h2>
-            <p className="mt-4 text-[#535E58] text-sm sm:text-base leading-relaxed">
+            <p className="mt-4 text-[#2D3933] text-sm sm:text-base leading-relaxed">
               Every development commitment filed under U.P. RERA for TRIIVANTA GOLD — presented
               clearly without ambiguity.
             </p>
@@ -125,7 +125,7 @@ export const SpecificationsSection: React.FC<SpecificationsSectionProps> = ({
             onClick={onOpenSpecsSheet}
             className="px-5 py-3 text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] bg-[#F5F4EF] border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-2 transition-colors whitespace-nowrap shrink-0 cursor-pointer self-start md:self-auto"
           >
-            <FileText className="w-4 h-4 text-[#9A7428]" />
+            <FileText className="w-4 h-4 text-[#7A5612]" />
             <span>View Official Specification Sheet</span>
           </button>
         </div>
@@ -137,7 +137,7 @@ export const SpecificationsSection: React.FC<SpecificationsSectionProps> = ({
               key={spec.number}
               className="py-6 border-b border-[#E6E3DB] flex items-start gap-5"
             >
-              <span className="font-mono text-xs font-semibold text-[#9A7428] pt-1 shrink-0 tabular-nums">
+              <span className="font-mono text-xs font-semibold text-[#7A5612] pt-1 shrink-0 tabular-nums">
                 {spec.number}
               </span>
               <div className="flex-1 min-w-0">
@@ -149,7 +149,7 @@ export const SpecificationsSection: React.FC<SpecificationsSectionProps> = ({
                     {spec.keyMetric}
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-[#535E58] leading-relaxed">{spec.description}</p>
+                <p className="mt-2 text-sm text-[#2D3933] leading-relaxed">{spec.description}</p>
               </div>
             </div>
           ))}

@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenCertificate,
 }) => {
   return (
-    <footer className="bg-[#F5F4EF] text-[#535E58] text-xs">
+    <footer className="bg-[#F5F4EF] text-[#2D3933] text-xs pb-24 lg:pb-0">
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
         {/* Brand Col (3 cols) */}
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({
             href="#overview"
             className="font-display font-semibold tracking-[0.2em] text-xl text-[#15271F] inline-block"
           >
-            TRIIVANTA <span className="text-[#9A7428]">GOLD</span>
+            TRIIVANTA <span className="text-[#7A5612]">GOLD</span>
           </a>
           <p className="text-xs leading-relaxed">
             A 45-acre gated township vision launching Phase 1 with 38 U.P. RERA registered plots
@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({
           <button
             type="button"
             onClick={onOpenVipModal}
-            className="inline-block pt-1 text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] hover:text-[#9A7428] underline underline-offset-4 cursor-pointer"
+            className="inline-block pt-1 text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] hover:text-[#7A5612] underline underline-offset-4 cursor-pointer"
           >
             Schedule Site Visit →
           </button>
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({
             </li>
             <li>
               <a href="#collections" className="hover:text-[#15271F] transition-colors">
-                38-Plot Ledger & Rates
+                38-Plot Phase 1 Ledger
               </a>
             </li>
             <li>
@@ -79,6 +79,11 @@ export const Footer: React.FC<FooterProps> = ({
                 Sultanpur Road Location
               </a>
             </li>
+            <li>
+              <a href="#faq" className="hover:text-[#15271F] transition-colors">
+                Investor Due-Diligence FAQ
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -89,41 +94,41 @@ export const Footer: React.FC<FooterProps> = ({
           </h4>
           <ul className="space-y-3">
             <li className="flex items-start gap-2.5">
-              <Building2 className="w-4 h-4 text-[#9A7428] shrink-0 mt-0.5" />
+              <Building2 className="w-4 h-4 text-[#7A5612] shrink-0 mt-0.5" />
               <div>
-                <div className="text-[#18221D] font-semibold">{RERA_DETAILS.promoterName}</div>
+                <div className="text-[#0E1713] font-semibold">{RERA_DETAILS.promoterName}</div>
                 <div className="mt-0.5">HQ: {RERA_DETAILS.promoterOffice}</div>
               </div>
             </li>
             <li className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-[#9A7428] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#7A5612] shrink-0 mt-0.5" />
               <span>Site: {RERA_DETAILS.fullProjectAddress}</span>
             </li>
             <li className="flex items-center gap-2.5">
-              <Phone className="w-4 h-4 text-[#9A7428] shrink-0" />
+              <Phone className="w-4 h-4 text-[#7A5612] shrink-0" />
               <a
                 href={RERA_DETAILS.helplineHref}
-                className="font-mono text-[#18221D] hover:text-[#9A7428] transition-colors tabular-nums"
+                className="font-mono text-[#0E1713] hover:text-[#7A5612] transition-colors tabular-nums"
               >
                 {RERA_DETAILS.helplineDisplay}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
-              <Mail className="w-4 h-4 text-[#9A7428] shrink-0" />
+              <Mail className="w-4 h-4 text-[#7A5612] shrink-0" />
               <a
                 href={`mailto:${RERA_DETAILS.email}`}
-                className="font-mono text-[#18221D] hover:text-[#9A7428] transition-colors"
+                className="font-mono text-[#0E1713] hover:text-[#7A5612] transition-colors"
               >
                 {RERA_DETAILS.email}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
-              <Globe className="w-4 h-4 text-[#9A7428] shrink-0" />
+              <Globe className="w-4 h-4 text-[#7A5612] shrink-0" />
               <a
                 href={RERA_DETAILS.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[#18221D] hover:text-[#9A7428] transition-colors"
+                className="font-mono text-[#0E1713] hover:text-[#7A5612] transition-colors"
               >
                 {RERA_DETAILS.websiteDisplay}
               </a>
@@ -134,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Statutory RERA Compliance Col (4 cols) */}
         <div className="lg:col-span-4">
           <h4 className="text-[#15271F] font-semibold uppercase tracking-[0.14em] text-[11px] mb-4 flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#9A7428]" />
+            <ShieldCheck className="w-4 h-4 text-[#7A5612]" />
             <span>U.P. RERA Disclosures</span>
           </h4>
           <div className="p-4 rounded-sm bg-white border border-[#E2DFD7] flex items-start gap-4">
@@ -152,13 +157,13 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div>
                 Registered:{' '}
-                <span className="text-[#18221D] font-mono font-medium">
+                <span className="text-[#0E1713] font-mono font-medium">
                   {RERA_DETAILS.registrationDate}
                 </span>
               </div>
               <div>
                 Completion:{' '}
-                <span className="text-[#18221D] font-mono font-medium">
+                <span className="text-[#0E1713] font-mono font-medium">
                   {RERA_DETAILS.proposedCompletionDate}
                 </span>
               </div>
@@ -167,7 +172,7 @@ export const Footer: React.FC<FooterProps> = ({
                   href={RERA_DETAILS.authorityUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#9A7428] hover:text-[#785717] inline-flex items-center gap-1 font-semibold"
+                  className="text-[#7A5612] hover:text-[#5C3F0B] inline-flex items-center gap-1 font-semibold"
                 >
                   <span>{RERA_DETAILS.authorityDisplayUrl}</span>
                   <ExternalLink className="w-3 h-3" />
@@ -175,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <button
                   type="button"
                   onClick={onOpenCertificate}
-                  className="text-[#15271F] hover:text-[#9A7428] inline-flex items-center gap-1 underline underline-offset-2 font-medium cursor-pointer"
+                  className="text-[#15271F] hover:text-[#7A5612] inline-flex items-center gap-1 underline underline-offset-2 font-medium cursor-pointer"
                 >
                   <FileText className="w-3 h-3" />
                   <span>Form C</span>
@@ -183,7 +188,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <button
                   type="button"
                   onClick={onOpenSpecsSheet}
-                  className="text-[#15271F] hover:text-[#9A7428] inline-flex items-center gap-1 underline underline-offset-2 font-medium cursor-pointer"
+                  className="text-[#15271F] hover:text-[#7A5612] inline-flex items-center gap-1 underline underline-offset-2 font-medium cursor-pointer"
                 >
                   <ClipboardList className="w-3 h-3" />
                   <span>Specs</span>
@@ -191,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
           </div>
-          <p className="mt-3 text-[11px] text-[#6B7570] leading-relaxed">
+          <p className="mt-3 text-[11px] text-[#38453E] leading-relaxed">
             Architectural visuals are artistic impressions. Development, plot dimensions, and civic
             works strictly adhere to U.P. RERA Form C and official project specifications.
           </p>
@@ -200,7 +205,7 @@ export const Footer: React.FC<FooterProps> = ({
 
       {/* Quiet Bottom Copyright Bar */}
       <div className="border-t border-[#E2DFD7] py-6">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6B7570]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#38453E]">
           <div>
             © {new Date().getFullYear()} {RERA_DETAILS.promoterName} · TRIIVANTA GOLD. All rights
             reserved.

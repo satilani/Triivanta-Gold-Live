@@ -33,11 +33,11 @@ export const ReraCertificateModal: React.FC<ReraCertificateModalProps> = ({ isOp
         {/* Header */}
         <div className="px-5 py-4 border-b border-[#E6E3DB] bg-[#F5F4EF] flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-9 h-9 rounded-sm border border-[#D8D4CA] bg-white flex items-center justify-center text-[#9A7428] shrink-0">
+            <div className="w-9 h-9 rounded-sm border border-[#D8D4CA] bg-white flex items-center justify-center text-[#7A5612] shrink-0">
               <ShieldCheck className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] tracking-[0.14em] uppercase text-[#9A7428] font-semibold">
+              <div className="text-[11px] tracking-[0.14em] uppercase text-[#7A5612] font-semibold">
                 Form C · Official Registration Certificate
               </div>
               <h3
@@ -54,23 +54,23 @@ export const ReraCertificateModal: React.FC<ReraCertificateModalProps> = ({ isOp
               href={RERA_DETAILS.authorityUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 text-xs font-medium text-[#18221D] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              className="px-3.5 py-2 text-xs font-medium text-[#0E1713] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
             >
               <span>Verify on U.P. RERA</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#9A7428]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#7A5612]" />
             </a>
             <a
               href={RERA_DETAILS.certificatePdfPath}
               download="Triivanta_Gold_RERA_Certificate.pdf"
               className="px-3.5 py-2 text-xs font-semibold text-white bg-[#15271F] hover:bg-[#1F372C] rounded-sm inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
             >
-              <Download className="w-3.5 h-3.5 text-[#E5C987]" />
+              <Download className="w-3.5 h-3.5 text-[#F2D99B]" />
               <span>Download PDF</span>
             </a>
             <button
               type="button"
               onClick={onClose}
-              className="p-2 rounded-sm text-[#535E58] hover:text-[#15271F] hover:bg-[#E8E5DC] transition-colors cursor-pointer"
+              className="p-2 rounded-sm text-[#2D3933] hover:text-[#15271F] hover:bg-[#E8E5DC] transition-colors cursor-pointer"
               aria-label="Close certificate preview"
             >
               <X className="w-5 h-5" />

@@ -33,11 +33,11 @@ export const SpecsSheetModal: React.FC<SpecsSheetModalProps> = ({ isOpen, onClos
         {/* Header */}
         <div className="px-5 py-4 border-b border-[#E6E3DB] bg-[#F5F4EF] flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-9 h-9 rounded-sm border border-[#D8D4CA] bg-white flex items-center justify-center text-[#9A7428] shrink-0">
+            <div className="w-9 h-9 rounded-sm border border-[#D8D4CA] bg-white flex items-center justify-center text-[#7A5612] shrink-0">
               <FileText className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] tracking-[0.14em] uppercase text-[#9A7428] font-semibold">
+              <div className="text-[11px] tracking-[0.14em] uppercase text-[#7A5612] font-semibold">
                 U.P. RERA: {RERA_DETAILS.regNumber}
               </div>
               <h3
@@ -55,14 +55,14 @@ export const SpecsSheetModal: React.FC<SpecsSheetModalProps> = ({ isOpen, onClos
               download="Triivanta_Gold_Specifications.png"
               className="px-3.5 py-2 text-xs font-semibold text-white bg-[#15271F] hover:bg-[#1F372C] rounded-sm inline-flex items-center gap-1.5 transition-colors whitespace-nowrap"
             >
-              <Download className="w-3.5 h-3.5 text-[#E5C987]" />
+              <Download className="w-3.5 h-3.5 text-[#F2D99B]" />
               <span>Download</span>
             </a>
 
             <button
               type="button"
               onClick={onClose}
-              className="p-2 rounded-sm text-[#535E58] hover:text-[#15271F] hover:bg-[#E8E5DC] transition-colors cursor-pointer"
+              className="p-2 rounded-sm text-[#2D3933] hover:text-[#15271F] hover:bg-[#E8E5DC] transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />

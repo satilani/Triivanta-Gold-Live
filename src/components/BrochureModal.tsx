@@ -33,11 +33,11 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
         {/* Modal Header */}
         <div className="p-5 sm:p-6 border-b border-[#E6E3DB] flex items-center justify-between bg-[#F5F4EF]">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-sm border border-[#D8D4CA] bg-white flex items-center justify-center text-[#9A7428]">
+            <div className="w-9 h-9 rounded-sm border border-[#D8D4CA] bg-white flex items-center justify-center text-[#7A5612]">
               <FileText className="w-4 h-4" />
             </div>
             <div>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-[#9A7428] font-semibold block">
+              <span className="text-[10px] uppercase tracking-[0.18em] text-[#7A5612] font-semibold block">
                 Official Project Dossier · {RERA_DETAILS.regNumber}
               </span>
               <h3
@@ -52,7 +52,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-sm text-[#535E58] hover:text-[#15271F] hover:bg-[#E8E5DC] transition-colors cursor-pointer"
+            className="p-1.5 rounded-sm text-[#2D3933] hover:text-[#15271F] hover:bg-[#E8E5DC] transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -60,20 +60,20 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 overflow-y-auto space-y-6 text-[#535E58] text-sm">
+        <div className="p-6 overflow-y-auto space-y-6 text-[#2D3933] text-sm">
           {/* Executive Summary + RERA QR */}
           <div className="p-5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7] flex flex-col sm:flex-row gap-5 items-center">
             <div className="flex-1 space-y-2">
-              <span className="text-[11px] uppercase tracking-[0.16em] text-[#9A7428] font-semibold block">
+              <span className="text-[11px] uppercase tracking-[0.16em] text-[#7A5612] font-semibold block">
                 Township Overview
               </span>
-              <p className="text-xs sm:text-sm leading-relaxed text-[#18221D]">
+              <p className="text-xs sm:text-sm leading-relaxed text-[#0E1713]">
                 Developed by <strong className="text-[#15271F]">{RERA_DETAILS.promoterName}</strong>{' '}
                 on Sultanpur Road at {RERA_DETAILS.locality}, Tehsil {RERA_DETAILS.tehsil},{' '}
                 {RERA_DETAILS.districtState}. Envisioned across 45 acres with Phase 1 launching{' '}
                 <strong className="text-[#15271F]">38 demarcated residential plots</strong> over
                 19,689 Sq.Mt. (4.87 Acres), registered under U.P. RERA{' '}
-                <span className="font-mono font-semibold text-[#9A7428]">
+                <span className="font-mono font-semibold text-[#7A5612]">
                   {RERA_DETAILS.regNumber}
                 </span>
                 .
@@ -91,42 +91,42 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
 
           {/* Verified Project Benchmarks */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#535E58] font-semibold mb-3">
-              Phase 1 Benchmarks & Launch Pricing
+            <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#2D3933] font-semibold mb-3">
+              Phase 1 Verified Benchmarks
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Phase 1 Land Area</span>
+                <span className="text-[#2D3933] block text-[10px] uppercase">Phase 1 Land Area</span>
                 <span className="text-[#15271F] font-semibold font-mono text-sm tabular-nums mt-0.5 block">
                   {AREA_STATEMENT.totalLandSqm.toLocaleString()} Sq.Mt.
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Phase 1 Inventory</span>
+                <span className="text-[#2D3933] block text-[10px] uppercase">Phase 1 Inventory</span>
                 <span className="text-[#15271F] font-semibold font-display text-base mt-0.5 block">
                   38 Plots (1,181–4,589 SF)
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Launch Rates</span>
-                <span className="text-[#9A7428] font-semibold font-mono text-xs tabular-nums mt-0.5 block">
-                  ₹3,100 · ₹3,410 · ₹3,720/SF
+                <span className="text-[#2D3933] block text-[10px] uppercase">Allotment Pricing</span>
+                <span className="text-[#7A5612] font-semibold font-display text-base mt-0.5 block">
+                  Shared on Site Visit
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Road Network</span>
+                <span className="text-[#2D3933] block text-[10px] uppercase">Road Network</span>
                 <span className="text-[#15271F] font-semibold font-display text-base mt-0.5 block">
                   60 Ft. Main & 30 Ft. Internal
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Central Park Zone</span>
+                <span className="text-[#2D3933] block text-[10px] uppercase">Central Park Zone</span>
                 <span className="text-[#2E5D43] font-semibold font-mono text-xs tabular-nums mt-0.5 block">
                   30,000 Sq.Ft. (15% Greens)
                 </span>
               </div>
               <div className="p-3.5 rounded-sm bg-[#F5F4EF] border border-[#E2DFD7]">
-                <span className="text-[#535E58] block text-[10px] uppercase">Investor Helpline</span>
+                <span className="text-[#2D3933] block text-[10px] uppercase">Investor Helpline</span>
                 <span className="text-[#15271F] font-semibold font-mono text-xs tabular-nums mt-0.5 block">
                   {RERA_DETAILS.helplineDisplay}
                 </span>
@@ -136,12 +136,12 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
 
           {/* Statutory Dates */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#535E58] font-semibold mb-3">
+            <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#2D3933] font-semibold mb-3">
               Statutory & Completion Timeline
             </h4>
             <div className="divide-y divide-[#E6E3DB] border-t border-b border-[#E6E3DB] text-xs">
               <div className="flex items-center justify-between py-3">
-                <span className="font-medium text-[#18221D]">
+                <span className="font-medium text-[#0E1713]">
                   U.P. RERA Form C Registration Granted
                 </span>
                 <span className="text-[#2E5D43] font-mono font-semibold tabular-nums">
@@ -149,10 +149,10 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
                 </span>
               </div>
               <div className="flex items-center justify-between py-3">
-                <span className="font-medium text-[#18221D]">
+                <span className="font-medium text-[#0E1713]">
                   Proposed Completion Date (as per U.P. RERA)
                 </span>
-                <span className="text-[#9A7428] font-mono font-semibold tabular-nums">
+                <span className="text-[#7A5612] font-mono font-semibold tabular-nums">
                   {RERA_DETAILS.proposedCompletionDate}
                 </span>
               </div>
@@ -160,7 +160,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
           </div>
 
           {/* Compliance notice */}
-          <div className="flex items-start gap-2.5 text-[11px] text-[#535E58] pt-1">
+          <div className="flex items-start gap-2.5 text-[11px] text-[#2D3933] pt-1">
             <ShieldCheck className="w-4 h-4 text-[#15271F] shrink-0 mt-0.5" />
             <span>
               Registered with {RERA_DETAILS.authorityName} ({RERA_DETAILS.authorityDisplayUrl})
@@ -177,7 +177,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
             <button
               type="button"
               onClick={() => window.print()}
-              className="px-3.5 py-2 text-xs font-medium text-[#18221D] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 cursor-pointer"
+              className="px-3.5 py-2 text-xs font-medium text-[#0E1713] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print</span>
@@ -188,9 +188,9 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
                 onClose();
                 onOpenSpecsSheet();
               }}
-              className="px-3.5 py-2 text-xs font-medium text-[#18221D] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 cursor-pointer"
+              className="px-3.5 py-2 text-xs font-medium text-[#0E1713] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 cursor-pointer"
             >
-              <ClipboardList className="w-3.5 h-3.5 text-[#9A7428]" />
+              <ClipboardList className="w-3.5 h-3.5 text-[#7A5612]" />
               <span>View Specifications</span>
             </button>
             <button
@@ -201,7 +201,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
               }}
               className="px-3.5 py-2 text-xs font-medium text-[#15271F] bg-white border border-[#D8D4CA] hover:border-[#15271F] rounded-sm inline-flex items-center gap-1.5 cursor-pointer"
             >
-              <ShieldCheck className="w-3.5 h-3.5 text-[#9A7428]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#7A5612]" />
               <span>View Form C</span>
             </button>
             <a
@@ -209,7 +209,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
               download="Triivanta_Gold_UP_RERA_Certificate.pdf"
               className="px-3.5 py-2 text-xs font-semibold text-white bg-[#15271F] hover:bg-[#1F372C] rounded-sm inline-flex items-center gap-1.5"
             >
-              <Download className="w-3.5 h-3.5 text-[#E5C987]" />
+              <Download className="w-3.5 h-3.5 text-[#F2D99B]" />
               <span>Download Form C PDF</span>
             </a>
           </div>
@@ -220,7 +220,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
               onClose();
               onOpenVipModal();
             }}
-            className="text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] hover:text-[#9A7428] underline underline-offset-4 cursor-pointer"
+            className="text-xs uppercase tracking-[0.14em] font-semibold text-[#15271F] hover:text-[#7A5612] underline underline-offset-4 cursor-pointer"
           >
             Schedule Visit →
           </button>

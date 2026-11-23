@@ -8,7 +8,9 @@ import { LivingCollections } from './components/LivingCollections';
 import { AmenitiesBento } from './components/AmenitiesBento';
 import { ConnectivitySection } from './components/ConnectivitySection';
 import { ReraComplianceSection } from './components/ReraComplianceSection';
+import { InvestorFaqSection } from './components/InvestorFaqSection';
 import { VipRegistration } from './components/VipRegistration';
+import { MobileStickyCtaBar } from './components/MobileStickyCtaBar';
 import { BrochureModal } from './components/BrochureModal';
 import { ReraCertificateModal } from './components/ReraCertificateModal';
 import { SpecsSheetModal } from './components/SpecsSheetModal';
@@ -33,7 +35,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#18221D] flex flex-col font-sans selection:bg-[#15271F]/15 selection:text-[#15271F]">
+    <div className="min-h-screen bg-white text-[#0E1713] flex flex-col font-sans selection:bg-[#15271F]/15 selection:text-[#15271F]">
       {/* Minimal 3-Zone Editorial Top Bar */}
       <Navbar
         onOpenVipModal={scrollToVipRegistration}
@@ -60,7 +62,7 @@ export default function App() {
         {/* Master Planning Perspectives & Land Allocation Statement */}
         <MasterPlanExplorer onOpenSpecsSheet={() => setIsSpecsOpen(true)} />
 
-        {/* Expandable Schedule of All 38 Exclusive Plots */}
+        {/* Expandable (Always-Crawlable) Schedule of All 38 Exclusive Plots */}
         <LivingCollections onSelectOption={handleSelectPlot} />
 
         {/* Open Greens, Avenues & Underground Civic Infrastructure */}
@@ -72,7 +74,13 @@ export default function App() {
         {/* Deep Botanical Statutory Transparency Band (U.P. RERA Form C) */}
         <ReraComplianceSection onOpenCertificate={() => setIsCertificateOpen(true)} />
 
-        {/* Private Site Visit & Plot Enquiry Section */}
+        {/* AEO-Optimized Investor & Buyer Due-Diligence FAQ */}
+        <InvestorFaqSection
+          onOpenVipModal={scrollToVipRegistration}
+          onOpenBrochureModal={() => setIsBrochureOpen(true)}
+        />
+
+        {/* Lightweight 3-Field Site Visit & Plot Enquiry Section */}
         <VipRegistration
           preselectedPlot={selectedPlot}
           onOpenBrochureModal={() => setIsBrochureOpen(true)}
@@ -86,7 +94,13 @@ export default function App() {
         onOpenCertificate={() => setIsCertificateOpen(true)}
       />
 
-      {/* Project Dossier Modal */}
+      {/* Sticky Mobile Conversion Bottom Bar */}
+      <MobileStickyCtaBar
+        onOpenVipModal={scrollToVipRegistration}
+        onOpenBrochureModal={() => setIsBrochureOpen(true)}
+      />
+
+      {/* Project Dossier & RERA-Approved Layout / Price Sheet Modal */}
       <BrochureModal
         isOpen={isBrochureOpen}
         onClose={() => setIsBrochureOpen(false)}
